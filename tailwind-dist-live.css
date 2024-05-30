@@ -593,7 +593,7 @@ select {
 }
     @font-face {
         font-family: "co-headline";
-        src: url("/font-co-headline-rg.woff") format("opentype");
+        src: url("../fonts/font-co-headline-rg.woff") format("opentype");
         font-display: swap;
         font-style: normal;
         font-weight: 400;
@@ -601,7 +601,7 @@ select {
 
     @font-face {
         font-family: "co-headline";
-            src: url("/font-co-headline-bd.woff") format("opentype");
+            src: url("../fonts/font-co-headline-bd.woff") format("opentype");
         font-display: swap;
         font-style: normal;
         font-weight: 700;
@@ -609,7 +609,7 @@ select {
 
     @font-face {
         font-family: "objektiv-mk3";
-            src: url("/font-objektiv-mk3-rg.woff") format("opentype");
+            src: url("../fonts/font-objektiv-mk3-rg.woff") format("opentype");
         font-display: swap;
         font-style: normal;
         font-weight: 400;
@@ -617,7 +617,7 @@ select {
 
     @font-face {
         font-family: "objektiv-mk3";
-            src: url("/font-objektiv-mk3-bd.woff") format("opentype");
+            src: url("../fonts/font-objektiv-mk3-bd.woff") format("opentype");
         font-display: swap;
         font-style: normal;
         font-weight: 700;
@@ -625,7 +625,7 @@ select {
 
     @font-face {
         font-family: "objektiv-mk3";
-            src: url("/font-objektiv-mk3-md.woff") format("opentype");
+            src: url("../fonts/font-objektiv-mk3-md.woff") format("opentype");
         font-display: swap;
         font-style: normal;
         font-weight: 500;
@@ -647,22 +647,13 @@ select {
   line-height: 28px;
 }
 
-    a, span, strong {
+    a, span, strong{
         font-size: inherit;
-        color: #0A717C;
+        color: inherit;
     }
 
     a:hover, a:focus {
         color: #06444A;
-        text-decoration: none;
-    }
-
-    a{
-        text-decoration: none;
-    }
-
-    a.ev-hyperlinks-extern, a.ev-hyperlinks-default{
-        text-decoration: underline;
     }
 
 *, ::before, ::after {
@@ -1966,20 +1957,6 @@ input[type="search"]::-webkit-search-cancel-button {
   animation: spin 1.5s linear infinite;
 }
 
-.ev-checkmark-list ul {
-  list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-check'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");;
-  line-height: 28px;
-}
-
-.ev-checkmark-list ul li {
-  margin-left: 24px;
-}
-
-.ev-checkmark-list ul li * {
-    display: inline;
-    
-}
-
 .project-image {
   position: relative;
   display: inline-flex;
@@ -2127,6 +2104,86 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .radio-icon.active > span > svg {
   stroke: #ffffff;
+}
+
+.ev-checkmark-list ul {
+  list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-check'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");;
+  line-height: 28px;
+}
+
+.ev-checkmark-list ul li {
+  margin-left: 24px;
+}
+
+.ev-checkmark-list ul li * {
+    display: inline;
+    
+}
+
+.k-dropdownlist {
+  position: relative;
+  display: flex;
+  width: 100%;
+  border-radius: 6px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(224 224 224 / var(--tw-border-opacity));
+  padding-left: 16px;
+  padding-right: 16px;
+  line-height: 36px;
+}
+
+.k-input-inner {
+  display: block;
+  height: 36px;
+  font-size: 14px;
+  line-height: 36px;
+}
+
+.k-button-icon svg {
+  height: 20px;
+  width: 20px;
+  fill: #666666;
+}
+
+.k-input-button {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 12px;
+}
+
+.k-list {
+  max-height: 400px;
+  overflow: hidden;
+  overflow-y: auto;
+  border-radius: 6px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+  --tw-shadow-colored: 0px 4px 12px 0px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.k-list-item {
+  cursor: pointer;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 36px;
+  --tw-text-opacity: 1;
+  color: rgb(102 102 102 / var(--tw-text-opacity));
+}
+
+.k-list-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
 .btn-primary, 
@@ -2558,56 +2615,6 @@ button.eve-search-ac:focus-visible {
   }
 }
 
-.eve-tab-panel {
-  overflow-x: auto;
-  border-radius: 8px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-    padding: 19px;
-}
-
-.crmEntityFormView, .entitylist, .modal-content, .popover-content {
-  --tw-text-opacity: 1;
-  color: rgb(51 51 51 / var(--tw-text-opacity));
-    background-color: #FFFFFF;
-    border: 0px;
-    /* solid #f2f2f2;*/
-}
-
-.crmEntityFormView fieldset {
-  margin: 0px;
-  border-width: 0;
-  padding: 0px;
-}
-
-.crmEntityFormView .section:first-child {
-  margin: 0px;
-}
-
-.crmEntityFormView .cell {
-    padding: 12px;
-}
-
-.crmEntityFormView .cell .field-label {
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 17px;
-  --tw-text-opacity: 1;
-  color: rgb(102 102 102 / var(--tw-text-opacity));
-}
-
-.crmEntityFormView .actions {
-  display: flex;
-  justify-content: flex-end;
-    border-top: 0px;
-    margin: 0px;
-    padding: 0px;
-}
-
-.crmEntityFormView .actions .btn:last-child {
-    margin-right: 0px !important;
-}
-
 .eve-sidebar-background{
     background-image: url("https://image.geo.de/34707236/t/H7/v5/w1440/r0/-/ostsee-thallium-g-1300868074-170667a.jpg");
 }
@@ -2690,72 +2697,6 @@ button.eve-search-ac:focus-visible {
 .eve-sidebar-mobil {
   display: block;
   height: 20px;
-}
-
-.k-dropdownlist {
-  position: relative;
-  display: flex;
-  width: 100%;
-  border-radius: 6px;
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(224 224 224 / var(--tw-border-opacity));
-  padding-left: 16px;
-  padding-right: 16px;
-  line-height: 36px;
-}
-
-.k-input-inner {
-  display: block;
-  height: 36px;
-  font-size: 14px;
-  line-height: 36px;
-}
-
-.k-button-icon svg {
-  height: 20px;
-  width: 20px;
-  fill: #666666;
-}
-
-.k-input-button {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  display: flex;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 12px;
-}
-
-.k-list {
-  max-height: 400px;
-  overflow: hidden;
-  overflow-y: auto;
-  border-radius: 6px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  --tw-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
-  --tw-shadow-colored: 0px 4px 12px 0px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.k-list-item {
-  cursor: pointer;
-  padding-left: 16px;
-  padding-right: 16px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 36px;
-  --tw-text-opacity: 1;
-  color: rgb(102 102 102 / var(--tw-text-opacity));
-}
-
-.k-list-item:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
 .eve-stages {
@@ -3102,24 +3043,37 @@ span.k-form-error {
         width: 20px;
 }
 
+/*
+@import "../_patterns/molecules/navigation/ev-primary-nav.css";
+*/
+
 .ev-icon.linkedin{
-        -webkit-mask: url(/assets/img/linkedin.svg) no-repeat 100% 100%;
-        mask: url(/assets/img/linkedin.svg) no-repeat 100% 100%;
+        -webkit-mask: url(#linkedin) no-repeat 100% 100%;
+        mask: url(#linkedin) no-repeat 100% 100%;
+        -webkit-mask-size:100%;
+                mask-size:100%;
     }
 
 .ev-icon.youtube{
-        -webkit-mask: url(/assets/img/youtube.svg) no-repeat 100% 100%;
-        mask: url(/assets/img/youtube.svg) no-repeat 100% 100%;
+        -webkit-mask: url(#youtube) no-repeat 100% 100%;
+        mask: url(#youtube) no-repeat 100% 100%;
+        -webkit-mask-size:100%;
+                mask-size:100%;
     }
 
 .ev-icon.instagram{
-        -webkit-mask: url(/assets/img/instagram.svg) no-repeat 100% 100%;
-        mask: url(/assets/img/instagram.svg) no-repeat 100% 100%;
+        -webkit-mask: url(#instagram) no-repeat 100% 100%;
+        mask: url(#instagram) no-repeat 100% 100%;
     }
 
 .ev-icon.whatsapp{
-        -webkit-mask: url(/assets/img/whatsapp.svg) no-repeat 100% 100%;
-        mask: url(/assets/img/whatsapp.svg) no-repeat 100% 100%;
+        -webkit-mask: url(source/icons/whatsapp.svg) no-repeat 100% 100%;
+        mask: url(source/icons/whatsapp.svg) no-repeat 100% 100%;
+    }
+
+.login-button{
+        font-family: "co-headline";
+        font-weight: 400;
     }
 
 .tw-sr-only {
