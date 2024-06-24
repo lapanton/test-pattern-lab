@@ -1046,6 +1046,18 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   display: none;
 }
 
+/* Chrome, Safari, Edge etc -  WebKit-browsers */
+
+input[type="time"]::-webkit-datetime-edit-ampm-field {
+  display: none !important;
+}
+
+/* Firefox */
+
+input[type="time"]::-moz-datetime-edit-ampm-field{
+  display: none !important;
+}
+
 input[type="time"] {
   display: inline-flex;
   gap: 12px;
@@ -1078,16 +1090,16 @@ input[type="time"]:focus-visible:focus {
 
 .input-time-btn > div {
   display: flex;
-  height: 28px;
-  width: 28px;
+  height: 32px;
+  width: 32px;
   align-items: center;
   justify-content: center;
 }
 
-.input-time-btn > div > span {
+.input-time-btn > div > span > span {
   display: flex;
-  height: 100%;
-  width: 100%;
+  height: 28px;
+  width: 28px;
   align-items: center;
   justify-content: center;
 }
@@ -1100,6 +1112,12 @@ input[type="time"]:focus-visible:focus {
 
 .scroll::-webkit-scrollbar {
   display: none !important;
+}
+
+@-moz-document url-prefix() {
+  .input-time-btn {
+    margin-left: -12px;
+  }
 }
 
 input[type="checkbox"] {
@@ -2265,12 +2283,14 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .ev-checkmark-list > ul,
+.ev-checkmark-list-md > ul,
 .ev-checkmark-list-sm > ul {
   --tw-text-opacity: 1;
   color: rgb(26 26 26 / var(--tw-text-opacity));
 }
 
-.ev-checkmark-list > ul > li {
+.ev-checkmark-list > ul > li,
+.ev-checkmark-list-md > ul > li {
   font-weight: 400;
   line-height: 28px;
   --tw-text-opacity: 1;
@@ -2285,7 +2305,8 @@ input[type="search"]::-webkit-search-cancel-button {
   color: rgb(26 26 26 / var(--tw-text-opacity));
 }
 
-.ev-checkmark-list ul li {
+.ev-checkmark-list ul li,
+.ev-checkmark-list-md ul li {
   position: relative;
   margin-left: 32px;
 }
@@ -2296,18 +2317,24 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .ev-checkmark-list ul li::before,
+.ev-checkmark-list-md ul li::before,
 .ev-checkmark-list-sm ul li::before {
   content: "";
   position: absolute;
   width: 20px;
   height: 20px;
-  top: -4px;
+  top: -2px;
   bottom: 50%;  
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M16.6667 5L7.50004 14.1667L3.33337 10' stroke='%231A1A1A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   margin-top: 4px;
 }
 
-.ev-checkmark-list ul li::before {
+.ev-checkmark-list-sm ul li::before { 
+  top: -7px;
+}
+
+.ev-checkmark-list ul li::before,
+.ev-checkmark-list-md ul li::before {
   left: -32px;
 }
 
@@ -2316,88 +2343,88 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .ev-checkmark-list ul li:not(:last-child),
+.ev-checkmark-list-md ul li:not(:last-child),
 .ev-checkmark-list-sm ul li:not(:last-child) {
   margin-bottom: 12px;
 }
 
 .ev-checkmark-list ul li *,
+.ev-checkmark-list-md ul li *,
 .ev-checkmark-list-sm ul li * {
   display: inline;
 }
 
-.eve-bullet-list ul {
-    list-style: none;
-    padding-left:0px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.eve-bullet-list ul li:before
-{
-    position: absolute;
-    content: '\2022';
-    margin-left:-13px;
-}
-
-.eve-bullet-list ul li{
-    padding-left: 13px;
-}
-
-.eve-bullet-list ul li ul {
-  margin-top: 12px;
-}
-
-.eve-bullet-list ul li ul li::before
-{
-    content: '-';
-    margin-left:-13px;
-}
-
-.eve-rich-text-content ul,
-.eve-rich-text-content p {
-  padding-bottom: 12px;
-}
-
-.eve-rich-text-content ul:last-child,
-.eve-rich-text-content p:last-child {
-  padding-bottom: 0px;
-}
-
-.eve-rich-text-content a {
-  stroke: #0A717C;
+.eve-bullet-list > ul,
+.eve-bullet-list-md > ul,
+.eve-bullet-list-sm > ul {
   --tw-text-opacity: 1;
-  color: rgb(10 113 124 / var(--tw-text-opacity));
-  text-decoration-color: #0A717C;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+  color: rgb(26 26 26 / var(--tw-text-opacity));
 }
 
-.eve-rich-text-content a:focus-visible {
-  stroke: #042D32;
+.eve-bullet-list > ul > li,
+.eve-bullet-list-md > ul > li {
+  font-weight: 400;
+  line-height: 28px;
   --tw-text-opacity: 1;
-  color: rgb(4 45 50 / var(--tw-text-opacity));
-  outline-width: 0px;
+  color: rgb(26 26 26 / var(--tw-text-opacity));
 }
 
-.eve-rich-text-content a:active {
-  stroke: #042D32;
+.eve-bullet-list-sm > ul > li {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
   --tw-text-opacity: 1;
-  color: rgb(4 45 50 / var(--tw-text-opacity));
-  text-decoration-color: #042D32;
+  color: rgb(26 26 26 / var(--tw-text-opacity));
 }
 
-.eve-rich-text-content a[rel~='noreferrer'] {
-  padding-left: 4px;
-  vertical-align: middle;
+.eve-bullet-list ul li ,
+.eve-bullet-list-md ul li {
+  position: relative;
+  margin-left: 18px;
 }
 
-.eve-rich-text-content a[rel~='noreferrer']:after{
-    content:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwYTcxN2MiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWV4dGVybmFsLWxpbmsiPjxwYXRoIGQ9Ik0xNSAzaDZ2NiIvPjxwYXRoIGQ9Ik0xMCAxNCAyMSAzIi8+PHBhdGggZD0iTTE4IDEzdjZhMiAyIDAgMCAxLTIgMkg1YTIgMiAwIDAgMS0yLTJWOGEyIDIgMCAwIDEgMi0yaDYiLz48L3N2Zz4=');
+.eve-bullet-list-sm > ul > li {
+  position: relative;
+  margin-left: 13px;
 }
 
-.eve-rich-text-content a[rel~='noreferrer']:hover:after{
-    content:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwNjQ0NGEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWV4dGVybmFsLWxpbmsiPjxwYXRoIGQ9Ik0xNSAzaDZ2NiIvPjxwYXRoIGQ9Ik0xMCAxNCAyMSAzIi8+PHBhdGggZD0iTTE4IDEzdjZhMiAyIDAgMCAxLTIgMkg1YTIgMiAwIDAgMS0yLTJWOGEyIDIgMCAwIDEgMi0yaDYiLz48L3N2Zz4=");
+.eve-bullet-list ul li::before,
+.eve-bullet-list-md ul li::before,
+.eve-bullet-list-sm ul li::before {
+  content: "•";
+  position: absolute;
+  width: 3px;
+  height: 20px;
+  top: -1px;
+  bottom: 50%;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.eve-bullet-list-sm ul li::before {
+  width: 3px;
+  height: 26px;
+}
+
+.eve-bullet-list ul li::before,
+.eve-bullet-list-md ul li::before {
+  left: -18px;
+}
+
+.eve-bullet-list-sm ul li::before {
+  left: -13px;
+}
+
+.eve-bullet-list ul li:not(:last-child),
+.eve-bullet-list-md ul li:not(:last-child),
+.eve-bullet-list-sm ul li:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.eve-bullet-list ul li *,
+.eve-bullet-list-md ul li *,
+.eve-bullet-list-sm ul li * {
+  display: inline;
 }
 
 .k-dropdownlist {
@@ -2466,8 +2493,13 @@ input[type="search"]::-webkit-search-cancel-button {
   background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
-.btn-primary, 
-.button-primary, .button-secondary, .button-tertiary, .button-tertiary-transparent, .button-ghost, .button-ghost-red {
+.btn-primary,
+.button-primary,
+.button-secondary,
+.button-tertiary,
+.button-tertiary-transparent,
+.button-ghost,
+.button-ghost-red {
   display: flex;
   width: -moz-fit-content;
   width: fit-content;
@@ -2507,6 +2539,8 @@ input[type="search"]::-webkit-search-cancel-button {
   border-color: rgb(6 68 74 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(6 68 74 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .btn-primary:focus-visible,
@@ -2735,7 +2769,8 @@ input[type="search"]::-webkit-search-cancel-button {
   font-size: 16px;
 }
 
-.button-size-l, .button-size-lg {
+.button-size-l,
+.button-size-lg {
   height: 40px;
   border-radius: 8px;
   padding-left: 20px;
@@ -2744,7 +2779,8 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .btn-primary,
-.button-size-m, .button-size-md {
+.button-size-m,
+.button-size-md {
   height: 36px;
   border-radius: 6px;
   padding-left: 16px;
@@ -2752,7 +2788,8 @@ input[type="search"]::-webkit-search-cancel-button {
   font-size: 14px;
 }
 
-.button-size-s, .button-size-sm {
+.button-size-s,
+.button-size-sm {
   height: 32px;
   border-radius: 6px;
   padding-left: 12px;
@@ -2768,14 +2805,18 @@ input[type="search"]::-webkit-search-cancel-button {
   font-size: 14px;
 }
 
-.button-ghost.button-size-lg, .button-ghost.button-size-l, .button-ghost-red.button-size-l, .button-ghost-red.button-size-lg {
+.button-ghost.button-size-lg,
+.button-ghost.button-size-l,
+.button-ghost-red.button-size-l,
+.button-ghost-red.button-size-lg {
   height: 40px;
   border-radius: 0;
   padding: 0px;
   font-size: 14px;
 }
 
-.button-ghost.button-size-md, .button-ghost.button-size-m {
+.button-ghost.button-size-md,
+.button-ghost.button-size-m {
   height: 36px;
   border-radius: 0;
   padding: 0px;
@@ -2852,10 +2893,6 @@ input[type="search"]::-webkit-search-cancel-button {
   stroke: #333333;
 }
 
-.button-icon:focus {
-  stroke: #000000;
-}
-
 .button-icon:focus-visible {
   --tw-border-opacity: 1;
   border-color: rgb(68 183 189 / var(--tw-border-opacity));
@@ -2863,6 +2900,12 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .button-icon:active {
   stroke: #000000;
+}
+
+.button-icon > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-icon-table {
@@ -3539,6 +3582,10 @@ img.eve-referent-img{
   right: -20px;
 }
 
+.tw-right-\[20px\] {
+  right: 20px;
+}
+
 .tw-right-md {
   right: 20px;
 }
@@ -3563,8 +3610,16 @@ img.eve-referent-img{
   top: 26px;
 }
 
+.tw-top-\[45px\] {
+  top: 45px;
+}
+
 .tw-top-\[50px\] {
   top: 50px;
+}
+
+.tw-top-\[53px\] {
+  top: 53px;
 }
 
 .tw-top-\[6px\] {
@@ -3581,10 +3636,6 @@ img.eve-referent-img{
 
 .tw-top-\[94px\] {
   top: 94px;
-}
-
-.tw-top-\[96px\] {
-  top: 96px;
 }
 
 .tw-top-\[9px\] {
@@ -3613,6 +3664,10 @@ img.eve-referent-img{
 
 .tw-float-right {
   float: right;
+}
+
+.tw-float-left {
+  float: left;
 }
 
 .tw-mx-auto {
@@ -3715,6 +3770,10 @@ img.eve-referent-img{
   margin-left: 1.5rem;
 }
 
+.tw-ml-\[6px\] {
+  margin-left: 6px;
+}
+
 .tw-ml-md {
   margin-left: 20px;
 }
@@ -3731,12 +3790,20 @@ img.eve-referent-img{
   margin-right: 4px;
 }
 
+.tw-mr-\[6px\] {
+  margin-right: 6px;
+}
+
 .tw-mr-xs {
   margin-right: 12px;
 }
 
 .tw-mt {
   margin-top: 1.25rem;
+}
+
+.tw-mt-0 {
+  margin-top: 0px;
 }
 
 .tw-mt-1 {
@@ -3749,6 +3816,10 @@ img.eve-referent-img{
 
 .tw-mt-3xs {
   margin-top: 4px;
+}
+
+.tw-mt-\[-2px\] {
+  margin-top: -2px;
 }
 
 .tw-mt-\[10px\] {
@@ -3765,6 +3836,10 @@ img.eve-referent-img{
 
 .tw-mt-sm {
   margin-top: 16px;
+}
+
+.tw-mt-xl {
+  margin-top: 28px;
 }
 
 .tw-mt-xs {
@@ -3860,12 +3935,20 @@ img.eve-referent-img{
   height: 200px;
 }
 
+.tw-h-\[22px\] {
+  height: 22px;
+}
+
 .tw-h-\[271px\] {
   height: 271px;
 }
 
 .tw-h-\[2px\] {
   height: 2px;
+}
+
+.tw-h-\[32px\] {
+  height: 32px;
 }
 
 .tw-h-\[36px\] {
@@ -3886,6 +3969,10 @@ img.eve-referent-img{
 
 .tw-h-\[50px\] {
   height: 50px;
+}
+
+.tw-h-\[52px\] {
+  height: 52px;
 }
 
 .tw-h-\[55px\] {
@@ -3937,6 +4024,10 @@ img.eve-referent-img{
   min-height: 100%;
 }
 
+.\!tw-w-\[600px\] {
+  width: 600px !important;
+}
+
 .tw-w-1\/2 {
   width: 50%;
 }
@@ -3979,10 +4070,6 @@ img.eve-referent-img{
 
 .tw-w-\[100px\] {
   width: 100px;
-}
-
-.tw-w-\[1200px\] {
-  width: 1200px;
 }
 
 .tw-w-\[128px\] {
@@ -4041,8 +4128,16 @@ img.eve-referent-img{
   width: 70px;
 }
 
+.tw-w-\[800px\] {
+  width: 800px;
+}
+
 .tw-w-\[80px\] {
   width: 80px;
+}
+
+.tw-w-\[96px\] {
+  width: 96px;
 }
 
 .tw-w-fit {
@@ -4067,12 +4162,12 @@ img.eve-referent-img{
   min-width: 100px;
 }
 
-.tw-min-w-\[440px\] {
-  min-width: 440px;
+.tw-min-w-\[36px\] {
+  min-width: 36px;
 }
 
-.tw-min-w-\[96px\] {
-  min-width: 96px;
+.tw-min-w-\[440px\] {
+  min-width: 440px;
 }
 
 .tw-min-w-full {
@@ -4081,6 +4176,10 @@ img.eve-referent-img{
 
 .tw-max-w-\[200px\] {
   max-width: 200px;
+}
+
+.tw-max-w-\[96px\] {
+  max-width: 96px;
 }
 
 .tw-max-w-content-full {
@@ -4134,6 +4233,10 @@ img.eve-referent-img{
 
 .tw-animate-spin {
   animation: tw-spin 1s linear infinite;
+}
+
+.tw-cursor-default {
+  cursor: default;
 }
 
 .tw-cursor-pointer {
@@ -4250,6 +4353,10 @@ img.eve-referent-img{
   gap: 1.5rem;
 }
 
+.tw-gap-\[10px\] {
+  gap: 10px;
+}
+
 .tw-gap-\[6px\] {
   gap: 6px;
 }
@@ -4315,6 +4422,10 @@ img.eve-referent-img{
   row-gap: 10px;
 }
 
+.tw-gap-y-lg {
+  row-gap: 24px;
+}
+
 .tw-gap-y-xs {
   row-gap: 12px;
 }
@@ -4329,12 +4440,6 @@ img.eve-referent-img{
   --tw-space-y-reverse: 0;
   margin-top: calc(8px * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(8px * var(--tw-space-y-reverse));
-}
-
-.tw-space-y-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
 .tw-space-y-sm > :not([hidden]) ~ :not([hidden]) {
@@ -4489,9 +4594,19 @@ img.eve-referent-img{
   border-bottom-left-radius: 8px;
 }
 
+.tw-rounded-b-xs {
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
 .tw-rounded-r-lg {
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
+}
+
+.tw-rounded-t-xs {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 .tw-rounded-bl-lg {
@@ -4500,6 +4615,10 @@ img.eve-referent-img{
 
 .tw-rounded-br-lg {
   border-bottom-right-radius: 16px;
+}
+
+.\!tw-border-0 {
+  border-width: 0 !important;
 }
 
 .tw-border {
@@ -4573,6 +4692,11 @@ img.eve-referent-img{
 .tw-border-f14 {
   --tw-border-opacity: 1;
   border-color: rgb(169 19 67 / var(--tw-border-opacity));
+}
+
+.tw-border-grey-2 {
+  --tw-border-opacity: 1;
+  border-color: rgb(233 233 233 / var(--tw-border-opacity));
 }
 
 .tw-border-transparent_black-0 {
@@ -5019,6 +5143,14 @@ img.eve-referent-img{
   stroke: #DC3545;
 }
 
+.tw-stroke-black-100 {
+  stroke: #000000;
+}
+
+.tw-stroke-black-40 {
+  stroke: #999999;
+}
+
 .tw-stroke-black-60 {
   stroke: #666666;
 }
@@ -5225,16 +5357,16 @@ img.eve-referent-img{
   padding-bottom: 10px;
 }
 
-.tw-pb-\[5px\] {
-  padding-bottom: 5px;
+.tw-pb-\[110px\] {
+  padding-bottom: 110px;
 }
 
 .tw-pb-\[6px\] {
   padding-bottom: 6px;
 }
 
-.tw-pb-\[8px\] {
-  padding-bottom: 8px;
+.tw-pb-\[7px\] {
+  padding-bottom: 7px;
 }
 
 .tw-pb-lg {
@@ -5263,6 +5395,10 @@ img.eve-referent-img{
 
 .tw-pl-3 {
   padding-left: 0.75rem;
+}
+
+.tw-pl-4 {
+  padding-left: 1rem;
 }
 
 .tw-pl-\[44px\] {
@@ -5337,8 +5473,24 @@ img.eve-referent-img{
   padding-top: 4px;
 }
 
-.tw-pt-\[10px\] {
-  padding-top: 10px;
+.tw-pt-\[11px\] {
+  padding-top: 11px;
+}
+
+.tw-pt-\[13px\] {
+  padding-top: 13px;
+}
+
+.tw-pt-\[14px\] {
+  padding-top: 14px;
+}
+
+.tw-pt-\[17px\] {
+  padding-top: 17px;
+}
+
+.tw-pt-\[1px\] {
+  padding-top: 1px;
 }
 
 .tw-pt-\[2px\] {
@@ -5353,12 +5505,12 @@ img.eve-referent-img{
   padding-top: 6px;
 }
 
-.tw-pt-\[7px\] {
-  padding-top: 7px;
-}
-
 .tw-pt-\[8px\] {
   padding-top: 8px;
+}
+
+.tw-pt-\[9px\] {
+  padding-top: 9px;
 }
 
 .tw-pt-lg {
@@ -5573,6 +5725,11 @@ img.eve-referent-img{
   color: rgb(8 90 99 / var(--tw-text-opacity));
 }
 
+.tw-text-brand-140 {
+  --tw-text-opacity: 1;
+  color: rgb(6 68 74 / var(--tw-text-opacity));
+}
+
 .tw-text-cards_violet-100 {
   --tw-text-opacity: 1;
   color: rgb(126 34 206 / var(--tw-text-opacity));
@@ -5591,6 +5748,11 @@ img.eve-referent-img{
 .tw-text-grey-3 {
   --tw-text-opacity: 1;
   color: rgb(220 220 220 / var(--tw-text-opacity));
+}
+
+.tw-text-grey-6 {
+  --tw-text-opacity: 1;
+  color: rgb(85 85 85 / var(--tw-text-opacity));
 }
 
 .tw-text-grey-7 {
@@ -5648,18 +5810,13 @@ img.eve-referent-img{
   --tw-ring-inset: inset !important;
 }
 
-.tw-ring-black-16 {
+.tw-ring-black-12 {
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(214 214 214 / var(--tw-ring-opacity));
+  --tw-ring-color: rgb(224 224 224 / var(--tw-ring-opacity));
 }
 
 .tw-drop-shadow-2xl {
   --tw-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.tw-drop-shadow-md {
-  --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
@@ -5837,12 +5994,6 @@ img.eve-referent-img{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.after\:tw-drop-shadow-sm::after {
-  content: var(--tw-content);
-  --tw-drop-shadow: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
 .after\:tw-transition-all::after {
   content: var(--tw-content);
   transition-property: all;
@@ -5950,6 +6101,11 @@ img.eve-referent-img{
   color: rgb(10 113 124 / var(--tw-text-opacity));
 }
 
+.hover\:tw-text-brand-140:hover {
+  --tw-text-opacity: 1;
+  color: rgb(6 68 74 / var(--tw-text-opacity));
+}
+
 .hover\:tw-text-f14-20k:hover {
   --tw-text-opacity: 1;
   color: rgb(135 15 54 / var(--tw-text-opacity));
@@ -5995,10 +6151,20 @@ img.eve-referent-img{
   background-color: rgb(206 227 229 / var(--tw-bg-opacity));
 }
 
+.focus\:tw-text-brand-140:focus {
+  --tw-text-opacity: 1;
+  color: rgb(6 68 74 / var(--tw-text-opacity));
+}
+
 .focus\:tw-ring-0:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus\:tw-ring-blue_light-100:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(68 183 189 / var(--tw-ring-opacity));
 }
 
 .focus\:tw-ring-offset-0:focus {
@@ -6013,10 +6179,6 @@ img.eve-referent-img{
 .focus\:placeholder\:\!tw-text-black-60:focus::placeholder {
   --tw-text-opacity: 1 !important;
   color: rgb(102 102 102 / var(--tw-text-opacity)) !important;
-}
-
-.focus-visible\:tw-border-2:focus-visible {
-  border-width: 2px;
 }
 
 .focus-visible\:tw-border-blue_light-100:focus-visible {
@@ -6047,6 +6209,10 @@ img.eve-referent-img{
   outline-width: 0px;
 }
 
+.focus-visible\:tw-outline-1:focus-visible {
+  outline-width: 1px;
+}
+
 .focus-visible\:tw-outline-2:focus-visible {
   outline-width: 2px;
 }
@@ -6071,9 +6237,17 @@ img.eve-referent-img{
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
+.focus-visible\:tw-ring-inset:focus-visible {
+  --tw-ring-inset: inset;
+}
+
 .focus-visible\:tw-ring-blue_light-100:focus-visible {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(68 183 189 / var(--tw-ring-opacity));
+}
+
+.focus-visible\:tw-ring-offset-0:focus-visible {
+  --tw-ring-offset-width: 0px;
 }
 
 .active\:tw-bg-brand-12:active {
@@ -6177,12 +6351,6 @@ img.eve-referent-img{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.tw-peer:checked ~ .peer-checked\:after\:tw-drop-shadow-sm::after {
-  content: var(--tw-content);
-  --tw-drop-shadow: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
 .tw-peer:checked ~ .hover\:peer-checked\:tw-bg-brand-120:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(8 90 99 / var(--tw-bg-opacity));
@@ -6211,20 +6379,28 @@ img.eve-referent-img{
 
 @media (min-width: 576px) {
 
+  .sm\:tw-ml-3 {
+    margin-left: 0.75rem;
+  }
+
   .sm\:tw-block {
     display: block;
+  }
+
+  .sm\:tw-hidden {
+    display: none;
   }
 
   .sm\:tw-w-4\/5 {
     width: 80%;
   }
 
-  .sm\:tw-w-\[1200px\] {
-    width: 1200px;
-  }
-
   .sm\:tw-w-\[400px\] {
     width: 400px;
+  }
+
+  .sm\:tw-w-\[800px\] {
+    width: 800px;
   }
 
   .sm\:tw-grid-cols-2 {
@@ -6516,6 +6692,10 @@ img.eve-referent-img{
     padding-bottom: 80px;
   }
 
+  .lg\:tw-pb-0 {
+    padding-bottom: 0px;
+  }
+
   .lg\:tw-pb-\[80px\] {
     padding-bottom: 80px;
   }
@@ -6563,8 +6743,18 @@ img.eve-referent-img{
     stroke: #0A717C;
   }
 
+  .lg\:hover\:tw-text-brand-100:hover {
+    --tw-text-opacity: 1;
+    color: rgb(10 113 124 / var(--tw-text-opacity));
+  }
+
   .lg\:active\:tw-rounded-sm:active {
     border-radius: 8px;
+  }
+
+  .tw-group:hover .lg\:group-hover\:tw-text-brand-100 {
+    --tw-text-opacity: 1;
+    color: rgb(10 113 124 / var(--tw-text-opacity));
   }
 }
 
