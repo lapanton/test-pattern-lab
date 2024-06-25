@@ -1,0 +1,218 @@
+@import "tailwindcss/base";
+
+/*------------------------------------*\
+    #COMPONENTS
+\*------------------------------------*/
+
+@import "../_patterns/atoms/layouts/lms-layout.css";
+
+@import "../_patterns/atoms/text/headings_objektiv_mk3.css";
+@import "../_patterns/atoms/text/headings_co_headline.css";
+@import "../_patterns/atoms/text/text-regular-400.css";
+@import "../_patterns/atoms/text/text-medium-500.css";
+@import "../_patterns/atoms/badges/badge.css";
+@import "../_patterns/atoms/forms/input-time.css";
+@import "../_patterns/atoms/forms/checkbox.css";
+@import "../_patterns/atoms/forms/text-input.css";
+@import "../_patterns/atoms/forms/textarea.css";
+@import "../_patterns/atoms/forms/radio-chip.css";
+@import "../_patterns/atoms/forms/select.css";
+@import "../_patterns/atoms/forms/select-standard.css";
+@import "../_patterns/molecules/forms/text-input-searchbar-ac.css";
+@import "../_patterns/molecules/forms/radio-button.css";
+@import "../_patterns/molecules/forms/switch-icon.css";
+@import "../_patterns/molecules/forms/switch-text.css";
+@import "../_patterns/molecules/forms/filter-item.css";
+@import "../_patterns/atoms/icons/icon.css";
+@import "../_patterns/atoms/diverses/status-dot.css";
+@import "../_patterns/atoms/hyperlinks/hyperlinks.css";
+@import "../_patterns/molecules/budget/budget.css";
+@import "../_patterns/molecules/blocks/card-list-block.css";
+@import "../_patterns/molecules/cards/card.css";
+@import "../_patterns/molecules/dropdown-list/dropdown-list-m.css";
+@import "../_patterns/molecules/forms/field.css";
+@import "../_patterns/molecules/forms/search.css";
+@import "../_patterns/molecules/lists/checkmark-list.css";
+@import "../_patterns/molecules/lists/bullet-list.css";
+@import "../_patterns/molecules/project-images/project-image.css";
+@import "../_patterns/molecules/user-card/user-card.css";
+@import "../_patterns/molecules/radio-icon/radio-icon.css";
+@import "../_patterns/molecules/buttons/buttons.css";
+@import "../_patterns/molecules/buttons/button-searchbar-ac.css";
+@import "../_patterns/molecules/forms/form-ac.css";
+@import "../_patterns/molecules/sidebar_item/sidebar_item.css";
+@import "../_patterns/molecules/dropdown-list/dropdown-list-kendo-ac.css";
+@import "../_patterns/molecules/navigation/process-indicator.css";
+@import "../_patterns/molecules/navigation/tab.css";
+@import "../_patterns/molecules/progress/progress-bar.css";
+@import "../_patterns/organisms/cards-ac/card-subject.css";
+@import "../_patterns/organisms/alert-toast/alert-toast.css";
+@import "../_patterns/organisms/forms/kendo-form-ac.css";
+@import "../_patterns/organisms/pop-up/pop-up.css";
+
+
+
+
+
+
+@layer base {
+    @font-face {
+        font-family: "co-headline";
+        src: url("/font-co-headline-rg.woff") format("opentype");
+        font-display: swap;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    @font-face {
+        font-family: "co-headline";
+            src: url("/font-co-headline-bd.woff") format("opentype");
+        font-display: swap;
+        font-style: normal;
+        font-weight: 700;
+    }
+
+    @font-face {
+        font-family: "objektiv-mk3";
+            src: url("/font-objektiv-mk3-rg.woff") format("opentype");
+        font-display: swap;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    @font-face {
+        font-family: "objektiv-mk3";
+            src: url("/font-objektiv-mk3-bd.woff") format("opentype");
+        font-display: swap;
+        font-style: normal;
+        font-weight: 700;
+    }
+
+    @font-face {
+        font-family: "objektiv-mk3";
+            src: url("/font-objektiv-mk3-md.woff") format("opentype");
+        font-display: swap;
+        font-style: normal;
+        font-weight: 500;
+    }
+
+    * {
+        font-family: "objektiv-mk3", sans-serif;
+        @apply tw-text-base tw-text-black-80;
+    }
+
+    html{
+        @apply tw-text-base;
+    }
+
+    p {
+        @apply tw-text-base tw-leading-md;
+    }
+
+    a, span, strong, p {
+        font-size: inherit;
+        color: inherit;
+    }
+
+    a:hover, a:focus {
+        color: #06444A;
+        text-decoration: none;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    a.ev-hyperlinks-extern, a.ev-hyperlinks-default{
+        text-decoration: underline;
+    }
+}
+
+
+
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+    .tw-ev-widget-container{
+        @apply tw-my-3 tw-bg-grey2 tw-p-2 tw-border-1 tw-border-solid tw-border-grey4;
+    }
+
+    .ev-nav-items-term{
+        background-image: url("/assets/img/nav-dropdown-icon.svg");
+        background-repeat: no-repeat;
+        background-position: center right;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .ev-nav-items-term.ev-active-term{
+        background-image: url("/assets/img/nav-dropdown-icon-active.svg");
+        border-bottom: 1px #0A717C solid;
+    }
+
+    .ev-nav-items-term.ev-active-term span{
+        color: #0A717C;
+    }
+
+    .ev-nav-items-container{
+        position: absolute;
+        top:55px;
+        background-color: white;
+        z-index: 1000;
+        min-width: 300px;
+        padding: 5px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .ev-nav-items-container>li{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 8px;
+        background-color: #e7f1f2;
+        border: 3px white solid;
+    }
+
+    .ev-nav-items-container>li:hover{
+        background: linear-gradient(to right,#44b7bd 0%,#44b7bd 3px,#e7f1f2 4px,#e7f1f2 100%);
+        font-weight: bold;
+    }
+
+    .ev-icon{
+        height: 14px;
+        width: 14px;
+        display: block;
+        background-color: #999999;
+    }
+
+    .ev-icon.linkedin{
+        -webkit-mask: url(/assets/img/linkedin.svg) no-repeat 100% 100%;
+        mask: url(/assets/img/linkedin.svg) no-repeat 100% 100%;
+    }
+
+    .ev-icon.youtube{
+        -webkit-mask: url(/assets/img/youtube.svg) no-repeat 100% 100%;
+        mask: url(/assets/img/youtube.svg) no-repeat 100% 100%;
+    }
+
+    .ev-icon.instagram{
+        -webkit-mask: url(/assets/img/instagram.svg) no-repeat 100% 100%;
+        mask: url(/assets/img/instagram.svg) no-repeat 100% 100%;
+    }
+
+    .ev-icon.whatsapp{
+        -webkit-mask: url(/assets/img/whatsapp.svg) no-repeat 100% 100%;
+        mask: url(/assets/img/whatsapp.svg) no-repeat 100% 100%;
+    }
+
+    .footer-list li{
+        line-height: 18px;
+        margin-bottom: 10px;
+    }
+
+    .footer-list svg{
+        display: inline;
+    }
+}

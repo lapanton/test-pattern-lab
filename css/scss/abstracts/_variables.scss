@@ -1,0 +1,261 @@
+/*------------------------------------*\
+    #VARIABLES
+\*------------------------------------*/
+
+/**
+ * CONTENTS
+ *
+ * COLORS
+ * Brand Colors...............Globally-available variables and config
+ * Neutral Colors.............Grayscale colors, including white and black
+ * Utility Colors.............Info, Warning, Error, Success
+ *
+ * TYPOGRAPHY
+ * Font Families..............The fonts used in the design system
+ * Sizing.....................Font sizing
+ *
+ * LAYOUT
+ * Max-widths.................Maximum layout container width
+ *
+
+ * SPACING
+ * Spacing defaults...........Spacing between elements
+ *
+ * BORDERS
+ * Border Width...............Border thicknesses
+ * Border Radius..............Border radius definitions
+ *
+ * ANIMATION
+ * Animation Speed............Transition/animation speed variables
+ * Animation easing...........Easing variables
+ *
+ * BREAKPOINTS
+ * Breakpoints................Global breakpoint definitions
+ */
+
+/*------------------------------------*\
+     #COLORS
+ \*------------------------------------*/
+
+/**
+ * Brand Colors
+ * 1) Brand=specific colors
+ */
+$color-brand-blue: #0000ff;
+
+$color-brand-4: #F5F9FA;
+$color-brand-6: #F1F6F7;
+$color-brand-8: #ECF4F5;
+$color-brand-12: #E1EEEF;
+$color-brand-16: #D8E8EA;
+$color-brand-20: #CEE3E5;
+$color-brand-30: #B6D5D8;
+$color-brand-40: #9DC6CB;
+$color-brand-60: #6CAAB0;
+$color-brand-80: #3B8D96;
+$color-brand-100: #0A717C;
+$color-brand-120: #085A63;
+$color-brand-140: #06444A;
+$color-brand-160: #042D32;
+
+$color-academy-4: #FCF6F8;
+$color-academy-6: #FAF1F4;
+$color-academy-8: #F9EDF0;
+$color-academy-12: #F4E2E8;
+$color-academy-16: #F1D9E1;
+$color-academy-20: #EED0D9;
+$color-academy-40: #DDA1B4;
+$color-academy-60: #CB718E;
+$color-academy-80: #BA4269;
+$color-academy-100: #A91343;
+$color-academy-120: #870F36;
+$color-academy-140: #650B28;
+$color-academy-160: #44081B;
+
+$color-beige-10: #FEFAF5;
+$color-beige-20: #FBF4EA;
+$color-beige-40: #F8E9D5;
+$color-beige-60: #F4DFC1;
+$color-beige-100: #EDC997;
+
+$color-orange-10: #FEF5E6;
+$color-orange-20: #FBEBCC;
+$color-orange-30: #FAE1B3;
+$color-orange-40: #F8D799;
+$color-orange-100: #ED9A00;
+$color-orange-120: #BE7B00;
+$color-orange-140: #8E5C00;
+
+$color-blue-light-100: #44B7BD;
+
+$color-state-green-light-10: #ECF9EC;
+$color-state-green-light-100: #7BD37B;
+
+$color-state-violet-20: #F3E8FF;
+$color-state-violet-100: #7E22CE;
+
+$state-blue-20: #DBEAFE;
+$state-blue-100: #1D4ED8;
+
+$state_pink-10: #FDF6F9;
+$state_pink-100: #F0A8C5;
+
+/**
+ * Black Colors
+ * 1) Black colors are grayscale values used throughout the UI
+ */
+$color-neutral-white: #fff;
+$color-neutral-gray-02: #f9f9f9;
+$color-neutral-gray-07: #eee;
+$color-neutral-gray-13: #ddd;
+$color-neutral-gray-27: #bbb;
+$color-neutral-gray-50: #808080;
+$color-neutral-gray-60: #666;
+$color-neutral-gray-73: #444;
+$color-neutral-gray-93: #131313;
+$color-neutral-black: #000;
+
+$color-black-0: #FFFFFF;
+$color-black-4: #F5F5F5;
+$color-black-6: #F0F0F0;
+$color-black-8: #EBEBEB;
+$color-black-12: #E0E0E0;
+$color-black-16: #D6D6D6;
+$color-black-20: #CCCCCC;
+$color-black-30: #B3B3B3;
+$color-black-40: #999999;
+$color-black-50: #808080;
+$color-black-60: #666666;
+$color-black-70: #4D4D4D;
+$color-black-80: #333333;
+$color-black-100: #000000;
+
+$color-transparent-black-0: rgba(0, 0, 0, 0);
+$color-transparent-black-6: rgba(0, 0, 0, 0.06);
+$color-transparent-black-8: rgba(0, 0, 0, 0.08);
+$color-transparent-black-12: rgba(0, 0, 0, 0.12);
+$color-transparent-black-50: rgba(0, 0, 0, 0.50);
+
+/**
+ * White Colors
+ */
+$color-white-100: #ffffff;
+$color-transparent-white-84: rgba(255, 255, 255, 0.84);
+
+/**
+ * Alarm Colors
+ * 1) Alarm colors are colors used to provide feedback, such as alert messages,
+ *    form validation, etc.
+ */
+$color-alarm-info: #0192d0;
+$color-alarm-error: #b12a0b;
+$color-alarm-success: #03804d;
+$color-alarm-warning: #a59b15;
+
+$color-alarm_green-10: #EAF7ED;
+$color-alarm_green-20: #D4EDDA;
+$color-alarm_green-80: #53B96A;
+$color-alarm_green-100: #28A745;
+$color-alarm_green-120: #208637;
+$color-alarm_green-140: #186429;
+
+$color-alarm_red-10: #FCEBED;
+$color-alarm_red-20: #F8D7DA;
+$color-alarm_red-100: #DC3545;
+$color-alarm_red-120: #B02A37;
+
+
+/*------------------------------------*\
+    #TYPOGRAPHY
+\*------------------------------------*/
+
+/**
+ * Font Family
+ */
+$font-family-primary: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+$font-family-secondary: serif;
+
+/**
+ * Font Sizing
+ */
+$font-size-sm: 0.75rem;
+$font-size-sm-2: 0.85rem;
+$font-size-med: 1rem;
+$font-size-med-2: 1.2rem;
+$font-size-large: 2rem;
+$font-size-xl: 3rem;
+
+/**
+ * Line Height
+ */
+$line-height-sm: 0.8;
+$line-height-sm-2: 0.9;
+$line-height-med: 1;
+$line-height-med-2: 1.2;
+$line-height-large: 1.6;
+$line-height-xl: 1.8;
+
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+
+/**
+ * Max Width
+ */
+$l-max-width: 60rem !default;
+$l-linelength-width: 36rem !default;
+
+/*------------------------------------*\
+    #SPACING
+\*------------------------------------*/
+
+/**
+ * Spacing and offsets
+ * 1) Used to space grids and body padding
+ */
+
+$spacing: 1rem;
+$spacing-small: round(0.5 * $spacing);
+$spacing-large: round(2 * $spacing);
+
+/*------------------------------------*\
+    #BORDERS
+\*------------------------------------*/
+
+/**
+ * Border widths
+ */
+$border-width: 1px;
+
+/**
+ * Border radius
+ */
+$border-radius: 8px;
+
+/*------------------------------------*\
+    #ANIMATION
+\*------------------------------------*/
+
+/**
+ * Transition Speed
+ */
+$anim-fade-quick: 0.15s;
+$anim-fade-long: 0.4s;
+
+/**
+ * Transition Ease
+ */
+$anim-ease: ease-out;
+
+/*------------------------------------*\
+    #BREAKPOINTS
+\*------------------------------------*/
+
+/**
+ * Breakpoints used in media queries
+ * 1) These are not the only breakpoints used, but they provide a few defaults
+ */
+$bp-small: 28em;
+$bp-med: 47em;
+$bp-large: 60em;
+$bp-xl: 70em;
