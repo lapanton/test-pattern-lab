@@ -593,7 +593,7 @@ select {
 }
     @font-face {
         font-family: "co-headline";
-        src: url("../fonts/font-co-headline-rg.woff") format("opentype");
+        src: url("/test-pattern-lab/fonts/font-co-headline-rg.woff") format("opentype");
         font-display: swap;
         font-style: normal;
         font-weight: 400;
@@ -601,7 +601,7 @@ select {
 
     @font-face {
         font-family: "co-headline";
-            src: url("../fonts/font-co-headline-bd.woff") format("opentype");
+            src: url("/test-pattern-lab/fonts/font-co-headline-bd.woff") format("opentype");
         font-display: swap;
         font-style: normal;
         font-weight: 700;
@@ -609,7 +609,7 @@ select {
 
     @font-face {
         font-family: "objektiv-mk3";
-            src: url("../fonts/font-objektiv-mk3-rg.woff") format("opentype");
+            src: url("/test-pattern-lab/fonts/font-objektiv-mk3-rg.woff") format("opentype");
         font-display: swap;
         font-style: normal;
         font-weight: 400;
@@ -617,7 +617,7 @@ select {
 
     @font-face {
         font-family: "objektiv-mk3";
-            src: url("../fonts/font-objektiv-mk3-bd.woff") format("opentype");
+            src: url("/test-pattern-lab/fonts/font-objektiv-mk3-bd.woff") format("opentype");
         font-display: swap;
         font-style: normal;
         font-weight: 700;
@@ -625,7 +625,7 @@ select {
 
     @font-face {
         font-family: "objektiv-mk3";
-            src: url("../fonts/font-objektiv-mk3-md.woff") format("opentype");
+            src: url("/test-pattern-lab/fonts/font-objektiv-mk3-md.woff") format("opentype");
         font-display: swap;
         font-style: normal;
         font-weight: 500;
