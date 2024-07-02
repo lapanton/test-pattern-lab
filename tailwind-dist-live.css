@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.4 | MIT License | https://tailwindcss.com
 *//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
@@ -1277,13 +1277,13 @@ input[type="email"]:disabled {
 }
 
 input[type="text"].error {
-  --tw-border-opacity: 1;
-  border-color: rgb(220 53 69 / var(--tw-border-opacity));
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(220 53 69 / var(--tw-ring-opacity));
 }
 
 input[type="text"].error:invalid:focus {
-  --tw-border-opacity: 1;
-  border-color: rgb(220 53 69 / var(--tw-border-opacity));
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(220 53 69 / var(--tw-ring-opacity));
 }
 
 input[type="text"]::-moz-placeholder {
@@ -1729,19 +1729,20 @@ input[type="radio"]:checked:focus-visible {
   content: "" !important;
 }
 
-.bg-icon::after {
-  content: "";
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cg clip-path='url(%23clip0_200_1567)'%3E%3Cpath d='M18.0334 3.03341L16.9667 1.96674C16.8729 1.87201 16.7613 1.7968 16.6383 1.74548C16.5153 1.69415 16.3833 1.66772 16.25 1.66772C16.1167 1.66772 15.9848 1.69415 15.8617 1.74548C15.7387 1.7968 15.6271 1.87201 15.5334 1.96674L1.96668 15.5334C1.87195 15.6272 1.79674 15.7388 1.74542 15.8618C1.69409 15.9848 1.66766 16.1168 1.66766 16.2501C1.66766 16.3834 1.69409 16.5153 1.74542 16.6384C1.79674 16.7614 1.87195 16.873 1.96668 16.9667L3.03335 18.0334C3.12653 18.1292 3.23796 18.2053 3.36105 18.2572C3.48415 18.3092 3.6164 18.336 3.75002 18.336C3.88363 18.336 4.01589 18.3092 4.13898 18.2572C4.26207 18.2053 4.3735 18.1292 4.46668 18.0334L18.0334 4.46674C18.1291 4.37356 18.2052 4.26213 18.2572 4.13904C18.3092 4.01595 18.3359 3.88369 18.3359 3.75008C18.3359 3.61647 18.3092 3.48421 18.2572 3.36112C18.2052 3.23802 18.1291 3.1266 18.0334 3.03341Z' stroke='%230A717C' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.6667 5.83325L14.1667 8.33325' stroke='%230A717C' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M4.16666 5V8.33333' stroke='%230A717C' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.8333 11.6667V15.0001' stroke='%230A717C' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.33334 1.66675V3.33341' stroke='%230A717C' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5.83333 6.66675H2.5' stroke='%230A717C' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M17.5 13.3333H14.1667' stroke='%230A717C' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.16667 2.5H7.5' stroke='%230A717C' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_200_1567'%3E%3Crect width='20' height='20' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.bg-svg > span {
+.bg-svg >div> span {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
+}
+
+.toggle-switch-inner {
+  transition: transform 0.3s;
+}
+
+.toggle-switch-inner.checked {
+  transform: translateX(73px);
 }
 
 .icon-big svg {
@@ -2059,7 +2060,6 @@ a.card-sm:focus, a.card-md:focus, a.card-lg:focus, a.card-xl:focus {
 .m {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   white-space: nowrap;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -2081,13 +2081,6 @@ a.card-sm:focus, a.card-md:focus, a.card-lg:focus, a.card-xl:focus {
 .m:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(245 245 245 / var(--tw-bg-opacity));
-}
-
-.m:focus-visible {
-  border-radius: 4px;
-  border-width: 2px;
-  --tw-border-opacity: 1;
-  border-color: rgb(68 183 189 / var(--tw-border-opacity));
 }
 
 .m {
@@ -2179,6 +2172,12 @@ input[type="search"]::-webkit-search-cancel-button {
   height: 20px !important;
   width: 20px !important;
     stroke-width: 1.5;
+}
+
+.mdthumbnail {
+  height: 64px;
+  width: 96px;
+  font-size: 14px;
 }
 
 .user-card {
@@ -2354,65 +2353,11 @@ input[type="search"]::-webkit-search-cancel-button {
   display: inline;
 }
 
-.eve-bullet-list > ul,
+.eve-bullet-list ul,
 .eve-bullet-list-md > ul,
 .eve-bullet-list-sm > ul {
   --tw-text-opacity: 1;
   color: rgb(26 26 26 / var(--tw-text-opacity));
-}
-
-.eve-bullet-list > ul > li,
-.eve-bullet-list-md > ul > li {
-  font-weight: 400;
-  line-height: 28px;
-  --tw-text-opacity: 1;
-  color: rgb(26 26 26 / var(--tw-text-opacity));
-}
-
-.eve-bullet-list-sm > ul > li {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 22px;
-  --tw-text-opacity: 1;
-  color: rgb(26 26 26 / var(--tw-text-opacity));
-}
-
-.eve-bullet-list ul li ,
-.eve-bullet-list-md ul li {
-  position: relative;
-  margin-left: 18px;
-}
-
-.eve-bullet-list-sm > ul > li {
-  position: relative;
-  margin-left: 13px;
-}
-
-.eve-bullet-list ul li::before,
-.eve-bullet-list-md ul li::before,
-.eve-bullet-list-sm ul li::before {
-  content: "•";
-  position: absolute;
-  width: 3px;
-  height: 20px;
-  top: -1px;
-  bottom: 50%;
-  margin-left: 1px;
-  margin-right: 1px;
-}
-
-.eve-bullet-list-sm ul li::before {
-  width: 3px;
-  height: 26px;
-}
-
-.eve-bullet-list ul li::before,
-.eve-bullet-list-md ul li::before {
-  left: -18px;
-}
-
-.eve-bullet-list-sm ul li::before {
-  left: -13px;
 }
 
 .eve-bullet-list ul li:not(:last-child),
@@ -2421,10 +2366,94 @@ input[type="search"]::-webkit-search-cancel-button {
   margin-bottom: 12px;
 }
 
-.eve-bullet-list ul li *,
-.eve-bullet-list-md ul li *,
-.eve-bullet-list-sm ul li * {
-  display: inline;
+.eve-bullet-list ul li ul li:not(:last-child),
+.eve-bullet-list-md ul li ul li:not(:last-child),
+.eve-bullet-list-sm ul li ul li:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.eve-bullet-list  ul > li,
+.eve-bullet-list-md  ul > li {
+  font-weight: 400;
+  line-height: 28px;
+  --tw-text-opacity: 1;
+  color: rgb(26 26 26 / var(--tw-text-opacity));
+  position: relative;
+  margin-left: 18px;
+}
+
+.eve-bullet-list ul li::before,
+.eve-bullet-list-md ul li::before {
+  content: "•";
+  position: absolute;
+  width: 3px;
+  height: 20px;
+  top: -1px;
+  margin-left: 1px;
+  margin-right: 1px;
+  left: -18px;
+}
+
+.eve-bullet-list ul > li > ul > li,
+.eve-bullet-list-md  ul > li > ul > li {
+  position: relative;
+  margin-left: 18px;
+}
+
+.eve-bullet-list ul > li > ul > li::before,
+.eve-bullet-list-md ul > li > ul > li::before {
+  content: "–";
+  position: absolute;
+  width: 8px;
+  height: 28px;
+  top: -1px;
+  margin-left: 1px;
+  margin-right: 1px;
+  left: -12px;
+}
+
+.eve-bullet-list-sm ul > li, 
+.eve-bullet-list-sm ul > li > ul> li {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  --tw-text-opacity: 1;
+  color: rgb(26 26 26 / var(--tw-text-opacity));
+  position: relative;
+  margin-left: 13px;
+}
+
+.eve-bullet-list  ul > li>ul,
+.eve-bullet-list-md ul > li>ul,
+.eve-bullet-list-sm ul > li>ul {
+  margin-top: 4px;
+}
+
+.eve-bullet-list-sm ul li::before {
+  content: "•";
+  position: absolute;
+  width: 3px;
+  height: 26px;
+  top: -1px;
+  margin-left: 1px;
+  margin-right: 1px;
+  left: -13px;
+}
+
+.eve-bullet-list-sm > ul > li > ul > li {
+  position: relative;
+  margin-left: 13px;
+}
+
+.eve-bullet-list-sm > ul > li > ul > li::before {
+  content: "–";
+  position: absolute;
+  width: 8px;
+  height: 28px;
+  top: -1px;
+  margin-left: 1px;
+  margin-right: 1px;
+  left: -12px;
 }
 
 .k-dropdownlist {
@@ -3075,6 +3104,150 @@ button.eve-search-ac:focus-visible {
   background-color: rgb(236 244 245 / var(--tw-bg-opacity));
 }
 
+.eve-item-sidebar {
+  display: flex;
+  height: 36px;
+  width: 180px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.0);
+  padding-left: 14px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  outline-width: 0px;
+}
+
+.eve-item-sidebar:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 249 250 / var(--tw-bg-opacity));
+}
+
+.eve-item-sidebar:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 244 245 / var(--tw-bg-opacity));
+}
+
+.eve-item-sidebar:focus-visible {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(68 183 189 / var(--tw-ring-opacity));
+}
+
+.eve-item-sidebar:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(225 238 239 / var(--tw-bg-opacity));
+}
+
+.eve-item-sidebar-labelfree {
+  display: flex;
+  height: 36px;
+  width: 52px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.0);
+  padding-left: 14px;
+  padding-right: 14px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  outline-width: 0px;
+}
+
+.eve-item-sidebar-labelfree:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 249 250 / var(--tw-bg-opacity));
+}
+
+.eve-item-sidebar-labelfree:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 244 245 / var(--tw-bg-opacity));
+}
+
+.eve-item-sidebar-labelfree:focus-visible {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(68 183 189 / var(--tw-ring-opacity));
+}
+
+.eve-item-sidebar-labelfree:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(225 238 239 / var(--tw-bg-opacity));
+}
+
+.eve-sidebar-text {
+  stroke-width: 1.5;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  --tw-text-opacity: 1;
+  color: rgb(10 113 124 / var(--tw-text-opacity));
+}
+
+.eve-menu-sidebar-switch {
+  display: flex;
+  height: 36px;
+  width: 180px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.0);
+  padding-left: 14px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  outline-width: 0px;
+}
+
+.eve-menu-sidebar-switch:focus-visible {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(68 183 189 / var(--tw-ring-opacity));
+}
+
+.eve-menu-sidebar-switch-labelfree {
+  display: flex;
+  height: 36px;
+  width: 52px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.0);
+  padding-left: 14px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  outline-width: 0px;
+}
+
+.eve-menu-sidebar-switch-labelfree:focus-visible {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(68 183 189 / var(--tw-ring-opacity));
+}
+
 .eve-sidebar-mobil {
   display: block;
   height: 20px;
@@ -3095,13 +3268,36 @@ button.eve-search-ac:focus-visible {
   display: flex;
 }
 
+a.eve-stage-item:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.eve-stage-item-label-content {
+  display: flex;
+  height: 40px;
+  flex: 1 1 0%;
+  align-items: center;
+  gap: 8px;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+a.eve-stage-item:focus-visible .eve-stage-item-label-content {
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(68 183 189 / var(--tw-border-opacity));
+}
+
 .eve-stage-item-label {
   margin-left: -15px;
   display: flex;
   height: 44px;
   flex: none;
   align-items: center;
-  gap: 8px;
   border-right-width: 0;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -3279,6 +3475,57 @@ button.eve-search-ac:focus-visible {
   margin-left: 0px;
 }
 
+.eve-menu-element {
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(236 244 245 / var(--tw-border-opacity));
+}
+
+.eve-menu-element:last-child {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.eve-menu-element:hover {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(236 244 245 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 249 250 / var(--tw-bg-opacity));
+}
+
+.eve-menu-element:focus {
+  border-width: 1px;
+}
+
+.eve-menu-element:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(225 238 239 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 992px) {
+
+  .eve-menu-element {
+    border-width: 2px;
+    --tw-border-opacity: 1;
+    border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  }
+
+  .eve-menu-element:hover {
+    border-color: rgb(255 255 255 / var(--tw-border-opacity));
+    --tw-border-opacity: 1;
+    border-bottom-color: rgb(10 113 124 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+
+  .eve-menu-element:focus {
+    border-width: 2px;
+  }
+}
+
 .eve-card-subject {
   display: flex;
   min-height: 20rem;
@@ -3288,9 +3535,6 @@ button.eve-search-ac:focus-visible {
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(224 224 224 / var(--tw-border-opacity));
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .eve-card-subject:hover {
@@ -3303,6 +3547,16 @@ button.eve-search-ac:focus-visible {
   outline-width: 2px;
   outline-offset: 0px;
   outline-color: #44B7BD;
+}
+
+@media (min-width: 992px) {
+
+  .eve-card-subject {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        background-image: var(--eve-card-background-image); /* Hintergrundbild nur für >= 992px */
+  }
 }
 
 .eve-card-subject:not(.eve-show-filtered-off) {
@@ -3452,12 +3706,347 @@ span.k-form-error {
         width: 20px;
 }
 
+.vert button {
+  width: 100%;
+}
+
+.vert .button-ghost {
+  border-radius: 6px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(10 113 124 / var(--tw-border-opacity));
+}
+
+.icon-svg span svg {
+  margin-top: -2px;
+}
+
 img.eve-referent-img{
     border: #E0E0E0 1px solid;
 }
 
 .eve-referent-list ul{
     list-style: disc;
+}
+
+.eve-calendar-picker {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 20;
+  margin-top: 3rem;
+  border-radius: 8px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+  --tw-shadow-colored: 0px 4px 12px 0px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  width: 284px;
+  padding: 16px;
+}
+
+.eve-calendar-picker__head {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.eve-calendar-picker__prev, .eve-calendar-picker__next {
+  padding: 4px;
+  width: 28px;
+  height: 28px;
+}
+
+.eve-calendar-picker__prev button, .eve-calendar-picker__next button {
+  border-radius: 4px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.eve-calendar-picker__prev button:focus-visible, .eve-calendar-picker__next button:focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(68 183 189 / var(--tw-ring-opacity));
+}
+
+.eve-calendar-picker__select {
+  display: flex;
+  gap: 16px;
+}
+
+.eve-calendar-picker__select-month, .eve-calendar-picker__select-year {
+  position: relative;
+}
+
+.eve-calendar-picker__days {
+  margin-bottom: 12px;
+  display: flex;
+}
+
+.eve-calendar-picker__days div {
+  width: 14.26%;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 17px;
+  --tw-text-opacity: 1;
+  color: rgb(102 102 102 / var(--tw-text-opacity));
+}
+
+.eve-calendar-picker__month {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+
+.eve-calendar-picker__day {
+  display: flex;
+  height: 36px;
+  width: 36px;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 100ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.eve-calendar-picker__day > div {
+  border-radius: 9999px;
+  border-width: 2px;
+  border-color: rgba(0, 0, 0, 0.0);
+  font-size: 14px;
+}
+
+.eve-calendar-picker__day:not(.eve-calendar-picker__day--blank) {
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.eve-calendar-picker__day:not(.eve-calendar-picker__day--blank):focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(68 183 189 / var(--tw-ring-opacity));
+}
+
+.eve-calendar-picker__day:not(.eve-calendar-picker__day--blank) div {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+}
+
+.eve-calendar-picker__day:not(.eve-calendar-picker__day--blank):hover div {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 246 247 / var(--tw-bg-opacity));
+}
+
+.eve-calendar-picker__day:not(.eve-calendar-picker__day--blank):not(.eve-calendar-picker__day--selected) {
+  border-radius: 9999px;
+}
+
+.eve-calendar-picker__day:not(.eve-calendar-picker__day--blank):not(.eve-calendar-picker__day--selected):hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(241 246 247 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 246 247 / var(--tw-bg-opacity));
+}
+
+.eve-calendar-picker__day--blank {
+  --tw-text-opacity: 1;
+  color: rgb(102 102 102 / var(--tw-text-opacity));
+}
+
+.eve-calendar-picker__day--today div {
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(10 113 124 / var(--tw-text-opacity));
+}
+
+.eve-calendar-picker__day:not(.eve-calendar-picker__day--today) div {
+  line-height: 19px;
+}
+
+.eve-calendar-picker__day--start {
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+}
+
+.eve-calendar-picker__day--end {
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+}
+
+.eve-calendar-picker__day--start, .eve-calendar-picker__day--end, .eve-calendar-picker__day--selected {
+  --tw-bg-opacity: 1;
+  background-color: rgb(225 238 239 / var(--tw-bg-opacity));
+}
+
+.eve-calendar-picker__day--start div, .eve-calendar-picker__day--end div, .eve-calendar-picker__day--selected div {
+  --tw-border-opacity: 1;
+  border-color: rgb(225 238 239 / var(--tw-border-opacity));
+}
+
+.eve-calendar-picker__select-widget {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  cursor: pointer;
+}
+
+.eve-calendar-picker__select-widget svg {
+  border-radius: 4px;
+  stroke: #1A1A1A;
+}
+
+.eve-calendar-picker__select-widget:focus-visible svg {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(68 183 189 / var(--tw-ring-opacity));
+}
+
+.eve-calendar-picker__select-title {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  --tw-text-opacity: 1;
+  color: rgb(26 26 26 / var(--tw-text-opacity));
+}
+
+.eve-calendar-picker__select-button {
+  border-radius: 4px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.eve-calendar-picker__select-button:focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(68 183 189 / var(--tw-ring-opacity));
+}
+
+.eve-calendar-picker__select-dropdown {
+  position: absolute;
+  z-index: 10;
+  overflow: hidden;
+  border-radius: 6px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-shadow:  0px 4px 12px 0px rgba(0, 0, 0, 0.08);
+  --tw-shadow-colored: 0px 4px 12px 0px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  margin-top: -8px;
+  margin-left: -8px;
+}
+
+.eve-calendar-picker__select-dropdown button {
+  display: flex;
+  border-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 36px;
+  --tw-text-opacity: 1;
+  color: rgb(102 102 102 / var(--tw-text-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.eve-calendar-picker__select-dropdown button:focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(68 183 189 / var(--tw-ring-opacity));
+}
+
+.filter-active {
+  stroke: #085A63;
+  --tw-text-opacity: 1;
+  color: rgb(8 90 99 / var(--tw-text-opacity));
+}
+
+.filter-active:hover {
+  --tw-text-opacity: 1;
+  color: rgb(6 68 74 / var(--tw-text-opacity));
+}
+
+.filter-active:active {
+  --tw-text-opacity: 1;
+  color: rgb(6 68 74 / var(--tw-text-opacity));
+}
+
+.filter-active:hover span {
+  stroke: #06444A;
+}
+
+.filter-active:active span {
+  stroke: #06444A;
+}
+
+.radio-color {
+  margin: 4px;
+  display: flex;
+  height: 1.75rem;
+  width: 1.75rem;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(214 214 214 / var(--tw-bg-opacity));
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.radio-color:hover {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-offset-width: 3px;
+}
+
+.radio-color:focus-visible {
+  margin: 4px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  outline-width: 2px;
+  outline-color: #44B7BD;
+}
+
+.radio-color.active {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(10 113 124 / var(--tw-ring-opacity));
+  --tw-ring-offset-width: 3px;
 }
 
 /*
@@ -3546,12 +4135,20 @@ img.eve-referent-img{
   bottom: 0px;
 }
 
+.tw-bottom-2xs {
+  bottom: 8px;
+}
+
 .tw-left-0 {
   left: 0px;
 }
 
 .tw-left-2 {
   left: 0.5rem;
+}
+
+.tw-left-2xs {
+  left: 8px;
 }
 
 .tw-left-4 {
@@ -3572,6 +4169,10 @@ img.eve-referent-img{
 
 .tw-right-0 {
   right: 0px;
+}
+
+.tw-right-2xs {
+  right: 8px;
 }
 
 .tw-right-4 {
@@ -3596,6 +4197,10 @@ img.eve-referent-img{
 
 .tw-top-2 {
   top: 0.5rem;
+}
+
+.tw-top-2xs {
+  top: 8px;
 }
 
 .tw-top-\[12px\] {
@@ -3714,6 +4319,14 @@ img.eve-referent-img{
   margin-bottom: 40px;
 }
 
+.tw-mb-4xs {
+  margin-bottom: 2px;
+}
+
+.tw-mb-\[2px\] {
+  margin-bottom: 2px;
+}
+
 .tw-mb-\[3px\] {
   margin-bottom: 3px;
 }
@@ -3762,10 +4375,6 @@ img.eve-referent-img{
   margin-left: 4px;
 }
 
-.tw-ml-4xs {
-  margin-left: 2px;
-}
-
 .tw-ml-6 {
   margin-left: 1.5rem;
 }
@@ -3808,10 +4417,6 @@ img.eve-referent-img{
 
 .tw-mt-1 {
   margin-top: 0.25rem;
-}
-
-.tw-mt-12 {
-  margin-top: 3rem;
 }
 
 .tw-mt-3xs {
@@ -3873,6 +4478,10 @@ img.eve-referent-img{
 
 .tw-inline-block {
   display: inline-block;
+}
+
+.\!tw-flex {
+  display: flex !important;
 }
 
 .tw-flex {
@@ -3939,8 +4548,16 @@ img.eve-referent-img{
   height: 22px;
 }
 
+.tw-h-\[24px\] {
+  height: 24px;
+}
+
 .tw-h-\[271px\] {
   height: 271px;
+}
+
+.tw-h-\[28px\] {
+  height: 28px;
 }
 
 .tw-h-\[2px\] {
@@ -3957,6 +4574,10 @@ img.eve-referent-img{
 
 .tw-h-\[380px\] {
   height: 380px;
+}
+
+.tw-h-\[400px\] {
+  height: 400px;
 }
 
 .tw-h-\[40px\] {
@@ -4000,6 +4621,10 @@ img.eve-referent-img{
   height: 100%;
 }
 
+.tw-h-screen {
+  height: 100vh;
+}
+
 .tw-h-xl {
   height: 28px;
 }
@@ -4026,6 +4651,10 @@ img.eve-referent-img{
 
 .\!tw-w-\[600px\] {
   width: 600px !important;
+}
+
+.\!tw-w-full {
+  width: 100% !important;
 }
 
 .tw-w-1\/2 {
@@ -4068,6 +4697,10 @@ img.eve-referent-img{
   width: 2.25rem;
 }
 
+.tw-w-\[100\%\] {
+  width: 100%;
+}
+
 .tw-w-\[100px\] {
   width: 100px;
 }
@@ -4084,12 +4717,12 @@ img.eve-referent-img{
   width: 170px;
 }
 
-.tw-w-\[18px\] {
-  width: 18px;
-}
-
 .tw-w-\[200px\] {
   width: 200px;
+}
+
+.tw-w-\[20px\] {
+  width: 20px;
 }
 
 .tw-w-\[240px\] {
@@ -4100,12 +4733,24 @@ img.eve-referent-img{
   width: 250px;
 }
 
+.tw-w-\[280px\] {
+  width: 280px;
+}
+
+.tw-w-\[28px\] {
+  width: 28px;
+}
+
 .tw-w-\[300px\] {
   width: 300px;
 }
 
 .tw-w-\[316px\] {
   width: 316px;
+}
+
+.tw-w-\[32px\] {
+  width: 32px;
 }
 
 .tw-w-\[380px\] {
@@ -4124,8 +4769,16 @@ img.eve-referent-img{
   width: 60px;
 }
 
+.tw-w-\[682px\] {
+  width: 682px;
+}
+
 .tw-w-\[70px\] {
   width: 70px;
+}
+
+.tw-w-\[71px\] {
+  width: 71px;
 }
 
 .tw-w-\[800px\] {
@@ -4136,8 +4789,16 @@ img.eve-referent-img{
   width: 80px;
 }
 
+.tw-w-\[8px\] {
+  width: 8px;
+}
+
 .tw-w-\[96px\] {
   width: 96px;
+}
+
+.tw-w-auto {
+  width: auto;
 }
 
 .tw-w-fit {
@@ -4168,6 +4829,10 @@ img.eve-referent-img{
 
 .tw-min-w-\[440px\] {
   min-width: 440px;
+}
+
+.tw-min-w-\[720px\] {
+  min-width: 720px;
 }
 
 .tw-min-w-full {
@@ -4329,6 +4994,10 @@ img.eve-referent-img{
   gap: 0.5rem;
 }
 
+.tw-gap-2xl {
+  gap: 32px;
+}
+
 .tw-gap-2xs {
   gap: 8px;
 }
@@ -4357,8 +5026,16 @@ img.eve-referent-img{
   gap: 10px;
 }
 
-.tw-gap-\[6px\] {
-  gap: 6px;
+.tw-gap-\[24px\] {
+  gap: 24px;
+}
+
+.tw-gap-\[70px\] {
+  gap: 70px;
+}
+
+.tw-gap-\[8px\] {
+  gap: 8px;
 }
 
 .tw-gap-lg {
@@ -4392,11 +5069,6 @@ img.eve-referent-img{
        column-gap: 20px;
 }
 
-.tw-gap-x-sm {
-  -moz-column-gap: 16px;
-       column-gap: 16px;
-}
-
 .tw-gap-x-xs {
   -moz-column-gap: 12px;
        column-gap: 12px;
@@ -4424,6 +5096,10 @@ img.eve-referent-img{
 
 .tw-gap-y-lg {
   row-gap: 24px;
+}
+
+.tw-gap-y-md {
+  row-gap: 20px;
 }
 
 .tw-gap-y-xs {
@@ -4641,6 +5317,10 @@ img.eve-referent-img{
   border-bottom-width: 2px;
 }
 
+.tw-border-r {
+  border-right-width: 1px;
+}
+
 .tw-border-t {
   border-top-width: 1px;
 }
@@ -4701,6 +5381,16 @@ img.eve-referent-img{
 
 .tw-border-transparent_black-0 {
   border-color: rgba(0, 0, 0, 0.0);
+}
+
+.tw-border-white-100 {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.tw-border-b-brand-8 {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(236 244 245 / var(--tw-border-opacity));
 }
 
 .tw-border-opacity-0 {
@@ -5099,10 +5789,6 @@ img.eve-referent-img{
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.tw-bg-opacity-50 {
-  --tw-bg-opacity: 0.5;
-}
-
 .tw-bg-opacity-75 {
   --tw-bg-opacity: 0.75;
 }
@@ -5129,6 +5815,14 @@ img.eve-referent-img{
 
 .tw-fill-white-100 {
   fill: #ffffff;
+}
+
+.\!tw-stroke-black-60 {
+  stroke: #666666 !important;
+}
+
+.\!tw-stroke-black-90 {
+  stroke: #1A1A1A !important;
 }
 
 .tw-stroke-academy-100 {
@@ -5252,6 +5946,11 @@ img.eve-referent-img{
   padding-right: 1rem;
 }
 
+.tw-px-\[10px\] {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .tw-px-lg {
   padding-left: 24px;
   padding-right: 24px;
@@ -5307,6 +6006,11 @@ img.eve-referent-img{
   padding-bottom: 10px;
 }
 
+.tw-py-\[11px\] {
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
 .tw-py-\[40px\] {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -5357,16 +6061,16 @@ img.eve-referent-img{
   padding-bottom: 10px;
 }
 
-.tw-pb-\[110px\] {
-  padding-bottom: 110px;
-}
-
 .tw-pb-\[6px\] {
   padding-bottom: 6px;
 }
 
 .tw-pb-\[7px\] {
   padding-bottom: 7px;
+}
+
+.tw-pb-\[96px\] {
+  padding-bottom: 96px;
 }
 
 .tw-pb-lg {
@@ -5473,6 +6177,10 @@ img.eve-referent-img{
   padding-top: 4px;
 }
 
+.tw-pt-4xs {
+  padding-top: 2px;
+}
+
 .tw-pt-\[11px\] {
   padding-top: 11px;
 }
@@ -5503,6 +6211,10 @@ img.eve-referent-img{
 
 .tw-pt-\[6px\] {
   padding-top: 6px;
+}
+
+.tw-pt-\[7px\] {
+  padding-top: 7px;
 }
 
 .tw-pt-\[8px\] {
@@ -5641,10 +6353,6 @@ img.eve-referent-img{
   line-height: 59px;
 }
 
-.tw-leading-loose {
-  line-height: 2;
-}
-
 .tw-leading-md {
   line-height: 28px;
 }
@@ -5663,6 +6371,11 @@ img.eve-referent-img{
 
 .tw-leading-xs {
   line-height: 17px;
+}
+
+.\!tw-text-black-90 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(26 26 26 / var(--tw-text-opacity)) !important;
 }
 
 .tw-text-academy-100 {
@@ -5725,11 +6438,6 @@ img.eve-referent-img{
   color: rgb(8 90 99 / var(--tw-text-opacity));
 }
 
-.tw-text-brand-140 {
-  --tw-text-opacity: 1;
-  color: rgb(6 68 74 / var(--tw-text-opacity));
-}
-
 .tw-text-cards_violet-100 {
   --tw-text-opacity: 1;
   color: rgb(126 34 206 / var(--tw-text-opacity));
@@ -5767,6 +6475,12 @@ img.eve-referent-img{
 
 .tw-decoration-white-100 {
   text-decoration-color: #ffffff;
+}
+
+.\!tw-shadow-md {
+  --tw-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12) !important;
+  --tw-shadow-colored: 0px 4px 12px 0px var(--tw-shadow-color) !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 
 .tw-shadow-md {
@@ -5868,6 +6582,10 @@ img.eve-referent-img{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.tw-ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
 .\[-a-zA-Z\:0-9_\.\] {
   -a-z-a--z: 0-9 .;
 }
@@ -5900,24 +6618,9 @@ img.eve-referent-img{
   inset-inline-start: 1px;
 }
 
-.after\:tw-start-\[2px\]::after {
-  content: var(--tw-content);
-  inset-inline-start: 2px;
-}
-
 .after\:tw-top-\[1px\]::after {
   content: var(--tw-content);
   top: 1px;
-}
-
-.after\:tw-top-\[2px\]::after {
-  content: var(--tw-content);
-  top: 2px;
-}
-
-.after\:tw-flex::after {
-  content: var(--tw-content);
-  display: flex;
 }
 
 .after\:tw-h-\[18px\]::after {
@@ -5925,54 +6628,14 @@ img.eve-referent-img{
   height: 18px;
 }
 
-.after\:tw-h-\[32px\]::after {
-  content: var(--tw-content);
-  height: 32px;
-}
-
-.after\:tw-h-\[36px\]::after {
-  content: var(--tw-content);
-  height: 36px;
-}
-
 .after\:tw-w-\[18px\]::after {
   content: var(--tw-content);
   width: 18px;
 }
 
-.after\:tw-w-\[32px\]::after {
-  content: var(--tw-content);
-  width: 32px;
-}
-
-.after\:tw-w-\[71px\]::after {
-  content: var(--tw-content);
-  width: 71px;
-}
-
-.after\:tw-items-center::after {
-  content: var(--tw-content);
-  align-items: center;
-}
-
-.after\:tw-justify-center::after {
-  content: var(--tw-content);
-  justify-content: center;
-}
-
-.after\:tw-rounded-2xs::after {
-  content: var(--tw-content);
-  border-radius: 4px;
-}
-
 .after\:tw-rounded-full::after {
   content: var(--tw-content);
   border-radius: 9999px;
-}
-
-.after\:tw-rounded-xl::after {
-  content: var(--tw-content);
-  border-radius: 20px;
 }
 
 .after\:\!tw-bg-black-4::after {
@@ -6006,22 +6669,9 @@ img.eve-referent-img{
   content: var(--tw-content);
 }
 
-.after\:tw-content-\[\'Text\'\]::after {
-  --tw-content: 'Text';
-  content: var(--tw-content);
-}
-
-.first\:tw-border-t:first-child {
-  border-top-width: 1px;
-}
-
-.last\:tw-border-none:last-child {
-  border-style: none;
-}
-
-.last\:tw-border-white-100:last-child {
+.last\:tw-border-b-white-100:last-child {
   --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  border-bottom-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
 .visited\:tw-text-brand-100:visited {
@@ -6040,6 +6690,16 @@ img.eve-referent-img{
 .hover\:tw-border-brand-100:hover {
   --tw-border-opacity: 1;
   border-color: rgb(10 113 124 / var(--tw-border-opacity));
+}
+
+.hover\:tw-border-brand-8:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(236 244 245 / var(--tw-border-opacity));
+}
+
+.hover\:tw-border-t-brand-8:hover {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(236 244 245 / var(--tw-border-opacity));
 }
 
 .hover\:tw-bg-black-20:hover {
@@ -6101,11 +6761,6 @@ img.eve-referent-img{
   color: rgb(10 113 124 / var(--tw-text-opacity));
 }
 
-.hover\:tw-text-brand-140:hover {
-  --tw-text-opacity: 1;
-  color: rgb(6 68 74 / var(--tw-text-opacity));
-}
-
 .hover\:tw-text-f14-20k:hover {
   --tw-text-opacity: 1;
   color: rgb(135 15 54 / var(--tw-text-opacity));
@@ -6115,6 +6770,26 @@ img.eve-referent-img{
   --tw-shadow:  0px 4px 12px 0px rgba(0, 0, 0, 0.08);
   --tw-shadow-colored: 0px 4px 12px 0px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.hover\:tw-ring-academy-80:hover {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(186 66 105 / var(--tw-ring-opacity));
+}
+
+.hover\:tw-ring-alarm_green-100:hover {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(40 167 69 / var(--tw-ring-opacity));
+}
+
+.hover\:tw-ring-brand-80:hover {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(59 141 150 / var(--tw-ring-opacity));
+}
+
+.hover\:tw-ring-orange-100:hover {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(237 154 0 / var(--tw-ring-opacity));
 }
 
 .hover\:placeholder\:\!tw-text-brand-120:hover::-moz-placeholder {
@@ -6151,9 +6826,8 @@ img.eve-referent-img{
   background-color: rgb(206 227 229 / var(--tw-bg-opacity));
 }
 
-.focus\:tw-text-brand-140:focus {
-  --tw-text-opacity: 1;
-  color: rgb(6 68 74 / var(--tw-text-opacity));
+.focus\:tw-outline-0:focus {
+  outline-width: 0px;
 }
 
 .focus\:tw-ring-0:focus {
@@ -6181,6 +6855,10 @@ img.eve-referent-img{
   color: rgb(102 102 102 / var(--tw-text-opacity)) !important;
 }
 
+.focus-visible\:tw-rounded-xs:focus-visible {
+  border-radius: 6px;
+}
+
 .focus-visible\:tw-border-blue_light-100:focus-visible {
   --tw-border-opacity: 1;
   border-color: rgb(68 183 189 / var(--tw-border-opacity));
@@ -6198,6 +6876,11 @@ img.eve-referent-img{
 .focus-visible\:tw-bg-white:focus-visible {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.focus-visible\:tw-text-white-100:focus-visible {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .focus-visible\:tw-outline-none:focus-visible {
@@ -6248,6 +6931,11 @@ img.eve-referent-img{
 
 .focus-visible\:tw-ring-offset-0:focus-visible {
   --tw-ring-offset-width: 0px;
+}
+
+.focus-visible\:focus\:tw-bg-white-100:focus:focus-visible {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .active\:tw-bg-brand-12:active {
@@ -6327,11 +7015,6 @@ img.eve-referent-img{
   left: -1px;
 }
 
-.tw-peer:checked ~ .peer-checked\:after\:tw-left-\[4px\]::after {
-  content: var(--tw-content);
-  left: 4px;
-}
-
 .tw-peer:checked ~ .peer-checked\:after\:tw-translate-x-full::after {
   content: var(--tw-content);
   --tw-translate-x: 100%;
@@ -6395,6 +7078,14 @@ img.eve-referent-img{
     width: 80%;
   }
 
+  .sm\:tw-w-\[100\%\] {
+    width: 100%;
+  }
+
+  .sm\:tw-w-\[280px\] {
+    width: 280px;
+  }
+
   .sm\:tw-w-\[400px\] {
     width: 400px;
   }
@@ -6409,10 +7100,6 @@ img.eve-referent-img{
 
   .sm\:tw-items-center {
     align-items: center;
-  }
-
-  .sm\:tw-stroke-black-80 {
-    stroke: #333333;
   }
 
   .sm\:tw-p-0 {
@@ -6509,8 +7196,8 @@ img.eve-referent-img{
     position: relative;
   }
 
-  .lg\:tw-left-\[-40px\] {
-    left: -40px;
+  .lg\:tw-left-\[-28px\] {
+    left: -28px;
   }
 
   .lg\:tw-top-0 {
@@ -6563,6 +7250,10 @@ img.eve-referent-img{
     display: none;
   }
 
+  .lg\:tw-min-h-\[800px\] {
+    min-height: 800px;
+  }
+
   .lg\:tw-w-1\/4 {
     width: 25%;
   }
@@ -6587,6 +7278,10 @@ img.eve-referent-img{
     width: 480px;
   }
 
+  .lg\:tw-w-\[732px\] {
+    width: 732px;
+  }
+
   .lg\:tw-w-\[74px\] {
     width: 74px;
   }
@@ -6594,6 +7289,10 @@ img.eve-referent-img{
   .lg\:tw-w-max {
     width: -moz-max-content;
     width: max-content;
+  }
+
+  .lg\:tw-max-w-\[732px\] {
+    max-width: 732px;
   }
 
   .lg\:tw-max-w-\[757px\] {
@@ -6646,13 +7345,12 @@ img.eve-referent-img{
     border-bottom-left-radius: 16px;
   }
 
-  .lg\:tw-border-none {
-    border-style: none;
+  .lg\:tw-border-2 {
+    border-width: 2px;
   }
 
-  .lg\:tw-border-brand-100 {
-    --tw-border-opacity: 1;
-    border-color: rgb(10 113 124 / var(--tw-border-opacity));
+  .lg\:tw-border-none {
+    border-style: none;
   }
 
   .lg\:tw-border-white-100 {
@@ -6660,8 +7358,13 @@ img.eve-referent-img{
     border-color: rgb(255 255 255 / var(--tw-border-opacity));
   }
 
-  .lg\:tw-stroke-black-80 {
-    stroke: #333333;
+  .lg\:tw-border-b-brand-100 {
+    --tw-border-opacity: 1;
+    border-bottom-color: rgb(10 113 124 / var(--tw-border-opacity));
+  }
+
+  .lg\:tw-stroke-black-90 {
+    stroke: #1A1A1A;
   }
 
   .lg\:tw-p-2xs {
@@ -6685,6 +7388,11 @@ img.eve-referent-img{
   .lg\:tw-py-2xs {
     padding-top: 8px;
     padding-bottom: 8px;
+  }
+
+  .lg\:tw-py-3xs {
+    padding-top: 4px;
+    padding-bottom: 4px;
   }
 
   .lg\:tw-py-\[80px\] {
@@ -6712,26 +7420,23 @@ img.eve-referent-img{
     padding-top: 80px;
   }
 
-  .lg\:tw-text-black-80 {
+  .lg\:tw-text-black-90 {
     --tw-text-opacity: 1;
-    color: rgb(51 51 51 / var(--tw-text-opacity));
-  }
-
-  .lg\:first\:tw-border-t-0:first-child {
-    border-top-width: 0;
-  }
-
-  .lg\:visited\:tw-text-black-80:visited {
-    color: rgb(51 51 51 );
+    color: rgb(26 26 26 / var(--tw-text-opacity));
   }
 
   .lg\:hover\:tw-rounded-sm:hover {
     border-radius: 8px;
   }
 
-  .lg\:hover\:tw-border-brand-100:hover {
+  .lg\:hover\:tw-border-white-100:hover {
     --tw-border-opacity: 1;
-    border-color: rgb(10 113 124 / var(--tw-border-opacity));
+    border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  }
+
+  .lg\:hover\:tw-border-b-brand-100:hover {
+    --tw-border-opacity: 1;
+    border-bottom-color: rgb(10 113 124 / var(--tw-border-opacity));
   }
 
   .lg\:hover\:tw-bg-white-100:hover {
@@ -6739,22 +7444,12 @@ img.eve-referent-img{
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 
-  .lg\:hover\:tw-stroke-brand-100:hover {
-    stroke: #0A717C;
-  }
-
-  .lg\:hover\:tw-text-brand-100:hover {
-    --tw-text-opacity: 1;
-    color: rgb(10 113 124 / var(--tw-text-opacity));
+  .lg\:focus\:tw-border-2:focus {
+    border-width: 2px;
   }
 
   .lg\:active\:tw-rounded-sm:active {
     border-radius: 8px;
-  }
-
-  .tw-group:hover .lg\:group-hover\:tw-text-brand-100 {
-    --tw-text-opacity: 1;
-    color: rgb(10 113 124 / var(--tw-text-opacity));
   }
 }
 
@@ -6774,12 +7469,40 @@ img.eve-referent-img{
   .\32xl\:tw-block {
     display: block;
   }
+
+  .\32xl\:tw-hidden {
+    display: none;
+  }
+
+  .\32xl\:tw-w-\[1108px\] {
+    width: 1108px;
+  }
+
+  .\32xl\:tw-w-\[400px\] {
+    width: 400px;
+  }
+
+  .\32xl\:tw-w-auto {
+    width: auto;
+  }
+
+  .\32xl\:tw-flex-row {
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 1680px) {
 
   .\33xl\:tw-block {
     display: block;
+  }
+
+  .\33xl\:tw-hidden {
+    display: none;
+  }
+
+  .\33xl\:tw-w-\[1484px\] {
+    width: 1484px;
   }
 }
 
@@ -6789,4 +7512,4 @@ img.eve-referent-img{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-
+/*# sourceMappingURL=tailwind-dist.css.map */
