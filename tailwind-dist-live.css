@@ -643,8 +643,9 @@ select {
 }
 
     p {
-        line-height: inherit;
-    }
+  font-size: 16px;
+  line-height: 28px;
+}
 
     a, span, strong, p {
         font-size: inherit;
@@ -653,6 +654,15 @@ select {
 
     a:hover, a:focus {
         color: #06444A;
+        text-decoration: none;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    a.ev-hyperlinks-extern, a.ev-hyperlinks-default{
+        text-decoration: underline;
     }
 
 *, ::before, ::after {
@@ -1129,6 +1139,8 @@ input[type="checkbox"] {
   border-color: rgb(214 214 214 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  outline: 2px solid transparent !important;
+  outline-offset: 0px !important;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
@@ -1155,6 +1167,8 @@ input[type="checkbox"]:hover:checked {
 }
 
 input[type="checkbox"]:focus {
+  outline: 2px solid transparent;
+  outline-offset: 0px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
@@ -1165,6 +1179,14 @@ input[type="checkbox"]:focus:checked {
   border-width: 2px;
   --tw-bg-opacity: 1;
   background-color: rgb(10 113 124 / var(--tw-bg-opacity));
+}
+
+input[type="checkbox"]:checked:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+input[type="checkbox"]:focus:checked {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
@@ -1172,6 +1194,8 @@ input[type="checkbox"]:focus:checked {
 
 input[type="checkbox"]:focus-visible {
   border-width: 0;
+  outline: 2px solid transparent;
+  outline-offset: 0px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
@@ -1179,7 +1203,9 @@ input[type="checkbox"]:focus-visible {
   --tw-ring-color: rgb(68 183 189 / var(--tw-ring-opacity));
 }
 
-input[type="checkbox"]:focus-visible:checked {
+input[type="checkbox"]:checked:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
@@ -1440,71 +1466,6 @@ textarea:disabled {
   --tw-ring-color: rgb(10 113 124 / var(--tw-ring-opacity));
 }
 
-select {
-  display: block;
-  width: 100%;
-  border-radius: 6px;
-  border-width: 0;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  font-size: 14px;
-  line-height: 20px;
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-  outline: 2px solid transparent;
-  outline-offset: 0px;
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  --tw-ring-inset: inset;
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(224 224 224 / var(--tw-ring-opacity));
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-duration: 150ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-select::-moz-placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(128 128 128 / var(--tw-text-opacity));
-}
-
-select::placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(128 128 128 / var(--tw-text-opacity));
-}
-
-select:hover {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(204 204 204 / var(--tw-ring-opacity));
-}
-
-select:focus {
-  border-width: 0;
-  --tw-ring-inset: inset;
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(179 179 179 / var(--tw-ring-opacity));
-}
-
-select:focus-visible {
-  outline-width: 2px;
-  outline-offset: 0px;
-  outline-color: #44B7BD;
-}
-
-select:focus-visible:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-select:disabled {
-  border-style: none;
-  --tw-bg-opacity: 1;
-  background-color: rgb(240 240 240 / var(--tw-bg-opacity));
-}
-
 .black {
   stroke: #1A1A1A;
   --tw-text-opacity: 1;
@@ -1598,6 +1559,71 @@ select:disabled {
 
 .stroke-black {
   stroke: #666666;
+}
+
+select {
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+  border-width: 0;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  font-size: 14px;
+  line-height: 20px;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 0px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-inset: inset;
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(224 224 224 / var(--tw-ring-opacity));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+select::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(128 128 128 / var(--tw-text-opacity));
+}
+
+select::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(128 128 128 / var(--tw-text-opacity));
+}
+
+select:hover {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(204 204 204 / var(--tw-ring-opacity));
+}
+
+select:focus {
+  border-width: 0;
+  --tw-ring-inset: inset;
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(179 179 179 / var(--tw-ring-opacity));
+}
+
+select:focus-visible {
+  outline-width: 2px;
+  outline-offset: 0px;
+  outline-color: #44B7BD;
+}
+
+select:focus-visible:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+select:disabled {
+  border-style: none;
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 240 240 / var(--tw-bg-opacity));
 }
 
 input[type="text"].eve-search-ac {
@@ -2124,163 +2150,6 @@ input[type="search"]::-webkit-search-cancel-button {
   animation: spin 1.5s linear infinite;
 }
 
-.project-image {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 6px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(236 244 245 / var(--tw-bg-opacity));
-  stroke: #0A717C;
-}
-
-.pi-default {
-  --tw-bg-opacity: 1;
-  background-color: rgb(236 244 245 / var(--tw-bg-opacity));
-  stroke: #0A717C;
-}
-
-.pi-bordeaux {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 237 240 / var(--tw-bg-opacity));
-  stroke: #A91343;
-}
-
-.pi-yellow {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 245 230 / var(--tw-bg-opacity));
-  stroke: #8E5C00;
-}
-
-.pi-green {
-  --tw-bg-opacity: 1;
-  background-color: rgb(234 247 237 / var(--tw-bg-opacity));
-  stroke: #186429;
-}
-
-.sm,
-.small {
-  height: 32px;
-  width: 48px;
-  border-radius: 4px;
-}
-
-.sm svg,
-.small svg {
-  height: 20px !important;
-  width: 20px !important;
-    stroke-width: 1.5;
-}
-
-.mdthumbnail {
-  height: 64px;
-  width: 96px;
-  font-size: 14px;
-}
-
-.user-card {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 9999px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(225 238 239 / var(--tw-bg-opacity));
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 28px;
-  --tw-text-opacity: 1;
-  color: rgb(10 113 124 / var(--tw-text-opacity));
-}
-
-.uc-bordeaux {
-  --tw-bg-opacity: 1;
-  background-color: rgb(244 226 232 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(169 19 67 / var(--tw-text-opacity));
-}
-
-.uc-yellow {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 235 204 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(142 92 0 / var(--tw-text-opacity));
-}
-
-.uc-green {
-  --tw-bg-opacity: 1;
-  background-color: rgb(212 237 218 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(24 100 41 / var(--tw-text-opacity));
-}
-
-.md {
-  height: 48px;
-  width: 48px;
-  font-size: 14px;
-}
-
-.radio-icon {
-  margin: 4px;
-  display: inline-flex;
-  height: 1.75rem;
-  width: 1.75rem;
-  flex: none;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-radius: 9999px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 22px;
-  --tw-text-opacity: 1;
-  color: rgb(26 26 26 / var(--tw-text-opacity));
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(214 214 214 / var(--tw-ring-opacity));
-  --tw-ring-offset-width: 3px;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-duration: 150ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.radio-icon:hover {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(10 113 124 / var(--tw-ring-opacity));
-}
-
-.radio-icon:focus-visible {
-  margin: 4px;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  outline-width: 2px;
-  outline-color: #44B7BD;
-}
-
-.radio-icon.active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(10 113 124 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(10 113 124 / var(--tw-ring-opacity));
-}
-
-.radio-icon.active > span > svg {
-  stroke: #ffffff;
-}
-
 .ev-checkmark-list > ul,
 .ev-checkmark-list-md > ul,
 .ev-checkmark-list-sm > ul {
@@ -2456,70 +2325,161 @@ input[type="search"]::-webkit-search-cancel-button {
   left: -12px;
 }
 
-.k-dropdownlist {
+.project-image {
   position: relative;
-  display: flex;
-  width: 100%;
-  border-radius: 6px;
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(224 224 224 / var(--tw-border-opacity));
-  padding-left: 16px;
-  padding-right: 16px;
-  line-height: 36px;
-}
-
-.k-input-inner {
-  display: block;
-  height: 36px;
-  font-size: 14px;
-  line-height: 36px;
-}
-
-.k-button-icon svg {
-  height: 20px;
-  width: 20px;
-  fill: #666666;
-}
-
-.k-input-button {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  display: flex;
-  height: 100%;
-  width: 100%;
+  display: inline-flex;
   align-items: center;
-  justify-content: flex-end;
-  padding-right: 12px;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 6px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 244 245 / var(--tw-bg-opacity));
+  stroke: #0A717C;
 }
 
-.k-list {
-  max-height: 400px;
+.pi-default {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 244 245 / var(--tw-bg-opacity));
+  stroke: #0A717C;
+}
+
+.pi-bordeaux {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 237 240 / var(--tw-bg-opacity));
+  stroke: #A91343;
+}
+
+.pi-yellow {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 245 230 / var(--tw-bg-opacity));
+  stroke: #8E5C00;
+}
+
+.pi-green {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 247 237 / var(--tw-bg-opacity));
+  stroke: #186429;
+}
+
+.sm,
+.small {
+  height: 32px;
+  width: 48px;
+  border-radius: 4px;
+}
+
+.sm svg,
+.small svg {
+  height: 20px !important;
+  width: 20px !important;
+    stroke-width: 1.5;
+}
+
+.mdthumbnail {
+  height: 64px;
+  width: 96px;
+  font-size: 14px;
+}
+
+.user-card {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  overflow-y: auto;
-  border-radius: 6px;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(225 238 239 / var(--tw-bg-opacity));
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 28px;
+  --tw-text-opacity: 1;
+  color: rgb(10 113 124 / var(--tw-text-opacity));
+}
+
+.uc-bordeaux {
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 226 232 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(169 19 67 / var(--tw-text-opacity));
+}
+
+.uc-yellow {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 235 204 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(142 92 0 / var(--tw-text-opacity));
+}
+
+.uc-green {
+  --tw-bg-opacity: 1;
+  background-color: rgb(212 237 218 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(24 100 41 / var(--tw-text-opacity));
+}
+
+.md {
+  height: 48px;
+  width: 48px;
+  font-size: 14px;
+}
+
+.radio-icon {
+  margin: 4px;
+  display: inline-flex;
+  height: 1.75rem;
+  width: 1.75rem;
+  flex: none;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 9999px;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  --tw-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
-  --tw-shadow-colored: 0px 4px 12px 0px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.k-list-item {
-  cursor: pointer;
-  padding-left: 16px;
-  padding-right: 16px;
   font-size: 14px;
   font-weight: 500;
-  line-height: 36px;
+  line-height: 22px;
   --tw-text-opacity: 1;
-  color: rgb(102 102 102 / var(--tw-text-opacity));
+  color: rgb(26 26 26 / var(--tw-text-opacity));
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(214 214 214 / var(--tw-ring-opacity));
+  --tw-ring-offset-width: 3px;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.k-list-item:hover {
+.radio-icon:hover {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(10 113 124 / var(--tw-ring-opacity));
+}
+
+.radio-icon:focus-visible {
+  margin: 4px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  outline-width: 2px;
+  outline-color: #44B7BD;
+}
+
+.radio-icon.active {
   --tw-bg-opacity: 1;
-  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
+  background-color: rgb(10 113 124 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(10 113 124 / var(--tw-ring-opacity));
+}
+
+.radio-icon.active > span > svg {
+  stroke: #ffffff;
 }
 
 .btn-primary,
@@ -3025,6 +2985,148 @@ button.eve-search-ac:focus-visible {
   }
 }
 
+.eve-tab-panel {
+  overflow-x: auto;
+  border-radius: 8px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding: 19px;
+}
+
+.crmEntityFormView, .entitylist, .modal-content, .popover-content {
+  --tw-text-opacity: 1;
+  color: rgb(51 51 51 / var(--tw-text-opacity));
+    background-color: #FFFFFF;
+    border: 0px;
+    /* solid #f2f2f2;*/
+}
+
+.crmEntityFormView fieldset {
+  margin: 0px;
+  border-width: 0;
+  padding: 0px;
+}
+
+.crmEntityFormView .section:first-child {
+  margin: 0px;
+}
+
+.crmEntityFormView .cell.checkbox-cell{
+    padding-left: 12px !important;
+}
+
+.crmEntityFormView .cell {
+    padding: 12px;
+}
+
+.crmEntityFormView .cell.checkbox-cell label{
+    padding-left: 12px;
+    display:block;
+}
+
+.crmEntityFormView .cell .field-label {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 17px;
+  --tw-text-opacity: 1;
+  color: rgb(102 102 102 / var(--tw-text-opacity));
+}
+
+.crmEntityFormView .actions {
+  display: flex;
+  justify-content: flex-end;
+    border-top: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.crmEntityFormView .actions .btn:last-child {
+    margin-right: 0px !important;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+  border-width: 0;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  font-size: 14px;
+  line-height: 20px;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 0px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-inset: inset;
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(224 224 224 / var(--tw-ring-opacity));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-control::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(128 128 128 / var(--tw-text-opacity));
+}
+
+.form-control::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(128 128 128 / var(--tw-text-opacity));
+}
+
+.form-control:hover {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(204 204 204 / var(--tw-ring-opacity));
+}
+
+.form-control:focus {
+  border-width: 0;
+  --tw-ring-inset: inset;
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(179 179 179 / var(--tw-ring-opacity));
+}
+
+.form-control:focus-visible {
+  outline-width: 2px;
+  outline-offset: 0px;
+  outline-color: #44B7BD;
+}
+
+.form-control:focus-visible:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.form-control:disabled {
+  border-style: none;
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 240 240 / var(--tw-bg-opacity));
+}
+
+.form-control {
+  --tw-shadow: 0 0 #0000 !important;
+  --tw-shadow-colored: 0 0 #0000 !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
+.form-control:focus {
+  --tw-shadow: 0 0 #0000 !important;
+  --tw-shadow-colored: 0 0 #0000 !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
+.form-control:focus-visible {
+  --tw-shadow: 0 0 #0000 !important;
+  --tw-shadow-colored: 0 0 #0000 !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
 .eve-sidebar-background{
     background-image: url("https://image.geo.de/34707236/t/H7/v5/w1440/r0/-/ostsee-thallium-g-1300868074-170667a.jpg");
 }
@@ -3253,6 +3355,72 @@ button.eve-search-ac:focus-visible {
   height: 20px;
 }
 
+.k-dropdownlist {
+  position: relative;
+  display: flex;
+  width: 100%;
+  border-radius: 6px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(224 224 224 / var(--tw-border-opacity));
+  padding-left: 16px;
+  padding-right: 16px;
+  line-height: 36px;
+}
+
+.k-input-inner {
+  display: block;
+  height: 36px;
+  font-size: 14px;
+  line-height: 36px;
+}
+
+.k-button-icon svg {
+  height: 20px;
+  width: 20px;
+  fill: #666666;
+}
+
+.k-input-button {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 12px;
+}
+
+.k-list {
+  max-height: 400px;
+  overflow: hidden;
+  overflow-y: auto;
+  border-radius: 6px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+  --tw-shadow-colored: 0px 4px 12px 0px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.k-list-item {
+  cursor: pointer;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 36px;
+  --tw-text-opacity: 1;
+  color: rgb(102 102 102 / var(--tw-text-opacity));
+}
+
+.k-list-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
+}
+
 .eve-stages {
   display: none;
 }
@@ -3348,39 +3516,6 @@ a.eve-stage-item:focus-visible .eve-stage-item-label-content {
 }
 */
 
-.eve-progress-bar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
-    height: 22px;
-}
-
-.eve-progress-bar-progress {
-  height: 12px;
-  flex: 1 1 0%;
-  border-radius: 4px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(235 235 235 / var(--tw-bg-opacity));
-}
-
-.eve-progress-bar-progress .eve-progress-bar-progress-fill {
-  height: 12px;
-  border-radius: 4px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(10 113 124 / var(--tw-bg-opacity));
-}
-
-.eve-progress-bar-label {
-  flex: none;
-  color: rgb(102 102 102 / var(--tw-text-opacity));
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 22px;
-  --tw-text-opacity: 1;
-  color: rgb(26 26 26 / var(--tw-text-opacity));
-}
-
 .eve-tab-nav {
   margin-bottom: 20px;
   display: inline-block;
@@ -3475,55 +3610,37 @@ a.eve-stage-item:focus-visible .eve-stage-item-label-content {
   margin-left: 0px;
 }
 
-.eve-menu-element {
-  cursor: pointer;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(236 244 245 / var(--tw-border-opacity));
+.eve-progress-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+    height: 22px;
 }
 
-.eve-menu-element:last-child {
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.eve-menu-element:hover {
-  --tw-border-opacity: 1;
-  border-top-color: rgb(236 244 245 / var(--tw-border-opacity));
+.eve-progress-bar-progress {
+  height: 12px;
+  flex: 1 1 0%;
+  border-radius: 4px;
   --tw-bg-opacity: 1;
-  background-color: rgb(245 249 250 / var(--tw-bg-opacity));
+  background-color: rgb(235 235 235 / var(--tw-bg-opacity));
 }
 
-.eve-menu-element:focus {
-  border-width: 1px;
-}
-
-.eve-menu-element:active {
+.eve-progress-bar-progress .eve-progress-bar-progress-fill {
+  height: 12px;
+  border-radius: 4px;
   --tw-bg-opacity: 1;
-  background-color: rgb(225 238 239 / var(--tw-bg-opacity));
+  background-color: rgb(10 113 124 / var(--tw-bg-opacity));
 }
 
-@media (min-width: 992px) {
-
-  .eve-menu-element {
-    border-width: 2px;
-    --tw-border-opacity: 1;
-    border-color: rgb(255 255 255 / var(--tw-border-opacity));
-  }
-
-  .eve-menu-element:hover {
-    border-color: rgb(255 255 255 / var(--tw-border-opacity));
-    --tw-border-opacity: 1;
-    border-bottom-color: rgb(10 113 124 / var(--tw-border-opacity));
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  }
-
-  .eve-menu-element:focus {
-    border-width: 2px;
-  }
+.eve-progress-bar-label {
+  flex: none;
+  color: rgb(102 102 102 / var(--tw-text-opacity));
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  --tw-text-opacity: 1;
+  color: rgb(26 26 26 / var(--tw-text-opacity));
 }
 
 .eve-card-subject {
@@ -3719,14 +3836,6 @@ span.k-form-error {
 
 .icon-svg span svg {
   margin-top: -2px;
-}
-
-img.eve-referent-img{
-    border: #E0E0E0 1px solid;
-}
-
-.eve-referent-list ul{
-    list-style: disc;
 }
 
 .eve-calendar-picker {
@@ -4049,37 +4158,24 @@ img.eve-referent-img{
   --tw-ring-offset-width: 3px;
 }
 
-/*
-@import "../_patterns/molecules/navigation/ev-primary-nav.css";
-*/
-
 .ev-icon.linkedin{
-        -webkit-mask: url(#linkedin) no-repeat 100% 100%;
-        mask: url(#linkedin) no-repeat 100% 100%;
-        -webkit-mask-size:100%;
-                mask-size:100%;
+        -webkit-mask: url(/assets/img/linkedin.svg) no-repeat 100% 100%;
+        mask: url(/assets/img/linkedin.svg) no-repeat 100% 100%;
     }
 
 .ev-icon.youtube{
-        -webkit-mask: url(#youtube) no-repeat 100% 100%;
-        mask: url(#youtube) no-repeat 100% 100%;
-        -webkit-mask-size:100%;
-                mask-size:100%;
+        -webkit-mask: url(/assets/img/youtube.svg) no-repeat 100% 100%;
+        mask: url(/assets/img/youtube.svg) no-repeat 100% 100%;
     }
 
 .ev-icon.instagram{
-        -webkit-mask: url(#instagram) no-repeat 100% 100%;
-        mask: url(#instagram) no-repeat 100% 100%;
+        -webkit-mask: url(/assets/img/instagram.svg) no-repeat 100% 100%;
+        mask: url(/assets/img/instagram.svg) no-repeat 100% 100%;
     }
 
 .ev-icon.whatsapp{
-        -webkit-mask: url(source/icons/whatsapp.svg) no-repeat 100% 100%;
-        mask: url(source/icons/whatsapp.svg) no-repeat 100% 100%;
-    }
-
-.login-button{
-        font-family: "co-headline";
-        font-weight: 400;
+        -webkit-mask: url(/assets/img/whatsapp.svg) no-repeat 100% 100%;
+        mask: url(/assets/img/whatsapp.svg) no-repeat 100% 100%;
     }
 
 .tw-sr-only {
@@ -4183,10 +4279,6 @@ img.eve-referent-img{
   right: -20px;
 }
 
-.tw-right-\[20px\] {
-  right: 20px;
-}
-
 .tw-right-md {
   right: 20px;
 }
@@ -4265,6 +4357,14 @@ img.eve-referent-img{
 
 .tw-z-50 {
   z-index: 50;
+}
+
+.tw-col-span-4 {
+  grid-column: span 4 / span 4;
+}
+
+.tw-col-span-8 {
+  grid-column: span 8 / span 8;
 }
 
 .tw-float-right {
@@ -4544,6 +4644,10 @@ img.eve-referent-img{
   height: 200px;
 }
 
+.tw-h-\[20px\] {
+  height: 20px;
+}
+
 .tw-h-\[22px\] {
   height: 22px;
 }
@@ -4627,6 +4731,10 @@ img.eve-referent-img{
 
 .tw-h-xl {
   height: 28px;
+}
+
+.tw-max-h-\[54px\] {
+  max-height: 54px;
 }
 
 .tw-max-h-full {
@@ -4773,12 +4881,20 @@ img.eve-referent-img{
   width: 682px;
 }
 
+.tw-w-\[684px\] {
+  width: 684px;
+}
+
 .tw-w-\[70px\] {
   width: 70px;
 }
 
 .tw-w-\[71px\] {
   width: 71px;
+}
+
+.tw-w-\[732px\] {
+  width: 732px;
 }
 
 .tw-w-\[800px\] {
@@ -4839,6 +4955,10 @@ img.eve-referent-img{
   min-width: 100%;
 }
 
+.tw-max-w-\[176px\] {
+  max-width: 176px;
+}
+
 .tw-max-w-\[200px\] {
   max-width: 200px;
 }
@@ -4889,6 +5009,22 @@ img.eve-referent-img{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.tw-scale-100 {
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.tw-scale-95 {
+  --tw-scale-x: .95;
+  --tw-scale-y: .95;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.tw-transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 @keyframes tw-spin {
 
   to {
@@ -4920,6 +5056,10 @@ img.eve-referent-img{
 
 .tw-grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tw-grid-cols-8 {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
 .tw-flex-row {
@@ -5018,8 +5158,16 @@ img.eve-referent-img{
   gap: 2px;
 }
 
+.tw-gap-5 {
+  gap: 1.25rem;
+}
+
 .tw-gap-6 {
   gap: 1.5rem;
+}
+
+.tw-gap-96 {
+  gap: 24rem;
 }
 
 .tw-gap-\[10px\] {
@@ -5057,11 +5205,6 @@ img.eve-referent-img{
 .tw-gap-x-2xs {
   -moz-column-gap: 8px;
        column-gap: 8px;
-}
-
-.tw-gap-x-3xs {
-  -moz-column-gap: 4px;
-       column-gap: 4px;
 }
 
 .tw-gap-x-md {
@@ -5317,6 +5460,10 @@ img.eve-referent-img{
   border-bottom-width: 2px;
 }
 
+.tw-border-b-\[1px\] {
+  border-bottom-width: 1px;
+}
+
 .tw-border-r {
   border-right-width: 1px;
 }
@@ -5347,6 +5494,11 @@ img.eve-referent-img{
 .tw-border-black-6 {
   --tw-border-opacity: 1;
   border-color: rgb(240 240 240 / var(--tw-border-opacity));
+}
+
+.tw-border-black-8 {
+  --tw-border-opacity: 1;
+  border-color: rgb(235 235 235 / var(--tw-border-opacity));
 }
 
 .tw-border-blue_light-100 {
@@ -5801,6 +5953,10 @@ img.eve-referent-img{
   background-image: url('https://picsum.photos/400/300?v2');
 }
 
+.tw-bg-none {
+  background-image: none;
+}
+
 .tw-bg-cover {
   background-size: cover;
 }
@@ -5986,6 +6142,11 @@ img.eve-referent-img{
   padding-bottom: 0px;
 }
 
+.tw-py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .tw-py-2xs {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -6055,6 +6216,10 @@ img.eve-referent-img{
 
 .tw-pb-3xl {
   padding-bottom: 40px;
+}
+
+.tw-pb-3xs {
+  padding-bottom: 4px;
 }
 
 .tw-pb-\[10px\] {
@@ -6345,8 +6510,16 @@ img.eve-referent-img{
   line-height: 22px;
 }
 
+.tw-leading-\[23px\] {
+  line-height: 23px;
+}
+
 .tw-leading-\[30px\] {
   line-height: 30px;
+}
+
+.tw-leading-\[36px\] {
+  line-height: 36px;
 }
 
 .tw-leading-\[59px\] {
@@ -6418,6 +6591,11 @@ img.eve-referent-img{
   color: rgb(102 102 102 / var(--tw-text-opacity));
 }
 
+.tw-text-black-70 {
+  --tw-text-opacity: 1;
+  color: rgb(77 77 77 / var(--tw-text-opacity));
+}
+
 .tw-text-black-80 {
   --tw-text-opacity: 1;
   color: rgb(51 51 51 / var(--tw-text-opacity));
@@ -6468,6 +6646,11 @@ img.eve-referent-img{
   color: rgb(60 60 60 / var(--tw-text-opacity));
 }
 
+.tw-text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .tw-text-white-100 {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -6475,6 +6658,14 @@ img.eve-referent-img{
 
 .tw-decoration-white-100 {
   text-decoration-color: #ffffff;
+}
+
+.tw-opacity-0 {
+  opacity: 0;
+}
+
+.tw-opacity-100 {
+  opacity: 1;
 }
 
 .\!tw-shadow-md {
@@ -6570,12 +6761,24 @@ img.eve-referent-img{
   transition-duration: 100ms;
 }
 
+.tw-duration-200 {
+  transition-duration: 200ms;
+}
+
 .tw-duration-300 {
   transition-duration: 300ms;
 }
 
 .tw-duration-500 {
   transition-duration: 500ms;
+}
+
+.tw-duration-75 {
+  transition-duration: 75ms;
+}
+
+.tw-ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
 .tw-ease-in-out {
@@ -6702,6 +6905,16 @@ img.eve-referent-img{
   border-top-color: rgb(236 244 245 / var(--tw-border-opacity));
 }
 
+.hover\:tw-bg-academy-80:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(186 66 105 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-alarm_green-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(40 167 69 / var(--tw-bg-opacity));
+}
+
 .hover\:tw-bg-black-20:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(204 204 204 / var(--tw-bg-opacity));
@@ -6750,6 +6963,16 @@ img.eve-referent-img{
 .hover\:tw-bg-brand-8:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(236 244 245 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-brand-80:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 141 150 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-orange-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(237 154 0 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-stroke-brand-100:hover {
@@ -7117,6 +7340,10 @@ img.eve-referent-img{
     bottom: 0px;
   }
 
+  .md\:tw-col-span-4 {
+    grid-column: span 4 / span 4;
+  }
+
   .md\:tw-block {
     display: block;
   }
@@ -7143,6 +7370,10 @@ img.eve-referent-img{
 
   .md\:tw-w-\[25\%\] {
     width: 25%;
+  }
+
+  .md\:tw-w-\[756px\] {
+    width: 756px;
   }
 
   .md\:tw-w-full {
@@ -7179,6 +7410,14 @@ img.eve-referent-img{
 
   .md\:tw-pb-0 {
     padding-bottom: 0px;
+  }
+
+  .md\:tw-pl-lg {
+    padding-left: 24px;
+  }
+
+  .md\:tw-pr-0 {
+    padding-right: 0px;
   }
 
   .md\:tw-text-center {
@@ -7315,6 +7554,10 @@ img.eve-referent-img{
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
+  .lg\:tw-grid-cols-8 {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
   .lg\:tw-flex-row {
     flex-direction: row;
   }
@@ -7363,6 +7606,22 @@ img.eve-referent-img{
     border-bottom-color: rgb(10 113 124 / var(--tw-border-opacity));
   }
 
+  .lg\:tw-bg-\[linear-gradient\(to_bottom\2c rgba\(0\2c 0\2c 0\2c 0\.85\)\2c rgba\(0\2c 0\2c 0\2c 0\.35\)\)\] {
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0.85),rgba(0,0,0,0.35));
+  }
+
+  .lg\:tw-bg-cover {
+    background-size: cover;
+  }
+
+  .lg\:tw-bg-center {
+    background-position: center;
+  }
+
+  .lg\:tw-bg-no-repeat {
+    background-repeat: no-repeat;
+  }
+
   .lg\:tw-stroke-black-90 {
     stroke: #1A1A1A;
   }
@@ -7373,6 +7632,11 @@ img.eve-referent-img{
 
   .lg\:tw-p-md {
     padding: 20px;
+  }
+
+  .lg\:tw-px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .lg\:tw-px-2xs {
@@ -7400,12 +7664,21 @@ img.eve-referent-img{
     padding-bottom: 80px;
   }
 
+  .lg\:tw-py-lg {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
   .lg\:tw-pb-0 {
     padding-bottom: 0px;
   }
 
   .lg\:tw-pb-\[80px\] {
     padding-bottom: 80px;
+  }
+
+  .lg\:tw-pb-lg {
+    padding-bottom: 24px;
   }
 
   .lg\:tw-pl-0 {
@@ -7420,9 +7693,26 @@ img.eve-referent-img{
     padding-top: 80px;
   }
 
+  .lg\:tw-pt-xs {
+    padding-top: 12px;
+  }
+
+  .lg\:tw-text-lg {
+    font-size: 1.375rem;
+  }
+
+  .lg\:tw-leading-\[30px\] {
+    line-height: 30px;
+  }
+
   .lg\:tw-text-black-90 {
     --tw-text-opacity: 1;
     color: rgb(26 26 26 / var(--tw-text-opacity));
+  }
+
+  .lg\:tw-text-white-100 {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
   .lg\:hover\:tw-rounded-sm:hover {
@@ -7450,6 +7740,18 @@ img.eve-referent-img{
 
   .lg\:active\:tw-rounded-sm:active {
     border-radius: 8px;
+  }
+
+  .tw-group:hover .lg\:group-hover\:tw-block {
+    display: block;
+  }
+
+  .tw-group:hover .lg\:group-hover\:tw-hidden {
+    display: none;
+  }
+
+  .tw-group:hover .lg\:group-hover\:tw-bg-\[linear-gradient\(to_bottom\2c rgba\(0\2c 0\2c 0\2c 0\.95\)\2c rgba\(0\2c 0\2c 0\2c 0\.5\)\)\] {
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0.95),rgba(0,0,0,0.5));
   }
 }
 
@@ -7486,6 +7788,10 @@ img.eve-referent-img{
     width: auto;
   }
 
+  .\32xl\:tw-grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
   .\32xl\:tw-flex-row {
     flex-direction: row;
   }
@@ -7504,6 +7810,10 @@ img.eve-referent-img{
   .\33xl\:tw-w-\[1484px\] {
     width: 1484px;
   }
+
+  .\33xl\:tw-grid-cols-16 {
+    grid-template-columns: repeat(16, minmax(0, 1fr));
+  }
 }
 
 .tw-peer:checked ~ .rtl\:peer-checked\:after\:tw--translate-x-full:where([dir="rtl"], [dir="rtl"] *)::after {
@@ -7512,4 +7822,4 @@ img.eve-referent-img{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-/*# sourceMappingURL=tailwind-dist.css.map */
+/*# sourceMappingURL=style-dist.css.map */
