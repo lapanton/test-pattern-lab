@@ -593,7 +593,7 @@ select {
 }
     @font-face {
         font-family: "co-headline";
-        src: url("/test-pattern-lab/fonts/font-co-headline-rg.woff") format("opentype");
+        src: url("../fonts/font-co-headline-rg.woff") format("opentype");
         font-display: swap;
         font-style: normal;
         font-weight: 400;
@@ -980,12 +980,12 @@ h5.eve-design {
 .eve-text-medium-xs {
   font-size: 13px;
   font-weight: 500;
-  line-height: 17px;
+  line-height: 19px;
   --tw-text-opacity: 1;
   color: rgb(102 102 102 / var(--tw-text-opacity));
 }
 
-.badges-neutral, .badges-danger, .badges-warning, .badges-success, .badges-info-brand, .badges-info-violet, .badges-info-blue {
+.badges-neutral, .badges-danger, .badges-warning, .badges-success, .badges-info-brand, .badges-info-violet, .badges-info-blue, .badges-neutral-linked, .badges-info-brand-linked {
   display: flex;
   height: 24px;
   width: -moz-fit-content;
@@ -997,13 +997,41 @@ h5.eve-design {
   font-size: 13px;
   font-weight: 500;
   line-height: 17px;
+  outline-width: 0px;
 }
 
 .badges-neutral {
   --tw-bg-opacity: 1;
   background-color: rgb(235 235 235 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
+  color: rgb(77 77 77 / var(--tw-text-opacity));
+}
+
+.badges-neutral-linked, .badges-info-brand-linked {
+  border-width: 2px;
+  border-color: rgba(0, 0, 0, 0.0);
+}
+
+.badges-neutral-linked {
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 235 235 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
   color: rgb(51 51 51 / var(--tw-text-opacity));
+}
+
+.badges-neutral-linked:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 224 224 / var(--tw-bg-opacity));
+}
+
+.badges-neutral-linked:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(214 214 214 / var(--tw-bg-opacity));
+}
+
+.badge-link-container:focus-visible>span {
+  --tw-border-opacity: 1;
+  border-color: rgb(68 183 189 / var(--tw-border-opacity));
 }
 
 .badges-danger {
@@ -1034,6 +1062,25 @@ h5.eve-design {
   color: rgb(8 90 99 / var(--tw-text-opacity));
 }
 
+.badges-info-brand-linked {
+  --tw-bg-opacity: 1;
+  background-color: rgb(206 227 229 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(8 90 99 / var(--tw-text-opacity));
+}
+
+.badges-info-brand-linked:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(182 213 216 / var(--tw-bg-opacity));
+}
+
+.badges-info-brand-linked:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(157 198 203 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(6 68 74 / var(--tw-text-opacity));
+}
+
 .badges-info-violet {
   --tw-bg-opacity: 1;
   background-color: rgb(243 232 255 / var(--tw-bg-opacity));
@@ -1061,6 +1108,10 @@ input[type="time"]::-webkit-datetime-edit-ampm-field {
 /* Firefox */
 
 input[type="time"]::-moz-datetime-edit-ampm-field{
+  display: none !important;
+}
+
+[x-cloak] {
   display: none !important;
 }
 
@@ -1342,66 +1393,13 @@ input[type="text"]:disabled:focus-visible:focus {
   outline-offset: 2px !important;
 }
 
-.radio-chip {
-  margin: 4px;
-  display: inline-flex;
-  height: 1.75rem;
-  flex: none;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-radius: 20px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 22px;
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-  outline: 2px solid transparent;
-  outline-offset: 0px;
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(214 214 214 / var(--tw-ring-opacity));
-  --tw-ring-offset-width: 3px;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-duration: 150ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.radio-chip:hover {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(10 113 124 / var(--tw-ring-opacity));
-}
-
-.radio-chip:focus-visible {
-  outline: 2px solid transparent;
-  outline-offset: 0px;
-}
-
-.radio-chip.active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(10 113 124 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(10 113 124 / var(--tw-ring-opacity));
-}
-
-.radio-chip:not(.active):focus-visible {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  --tw-ring-opacity: 1 !important;
-  --tw-ring-color: rgb(68 183 189 / var(--tw-ring-opacity)) !important;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #000 !important;
 }
 
 select {
@@ -2029,10 +2027,10 @@ a.card-sm:focus, a.card-md:focus, a.card-lg:focus, a.card-xl:focus {
   display: flex;
   align-items: center;
   white-space: nowrap;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 14px;
+  padding-right: 14px;
   color: rgb(102 102 102 / var(--tw-text-opacity));
   font-size: 14px;
   font-weight: 500;
@@ -2058,7 +2056,7 @@ a.card-sm:focus, a.card-md:focus, a.card-lg:focus, a.card-xl:focus {
 label {
   font-size: 13px;
   font-weight: 500;
-  line-height: 17px;
+  line-height: 19px;
   --tw-text-opacity: 1;
   color: rgb(102 102 102 / var(--tw-text-opacity));
 }
@@ -2189,75 +2187,6 @@ input[type="search"]::-webkit-search-cancel-button {
   height: 48px;
   width: 48px;
   font-size: 14px;
-}
-
-.radio-icon {
-  margin: 4px;
-  display: inline-flex;
-  height: 1.75rem;
-  width: 1.75rem;
-  flex: none;
-  flex-shrink: 0;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-radius: 9999px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 22px;
-  --tw-text-opacity: 1;
-  color: rgb(26 26 26 / var(--tw-text-opacity));
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(214 214 214 / var(--tw-ring-opacity));
-  --tw-ring-offset-width: 3px;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-duration: 150ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.radio-icon:hover {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(10 113 124 / var(--tw-ring-opacity));
-}
-
-.radio-icon:focus-visible {
-  margin: 4px;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-.focus-visible:tw-outline-2:focus-visible {
-  outline-width: 2px;
-}
-
-.focus-visible:tw-outline-blue_light-100:focus-visible {
-  outline-color: #44B7BD;
-}
-
-.radio-icon.active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(10 113 124 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(10 113 124 / var(--tw-ring-opacity));
-}
-
-.radio-icon.active > span > svg {
-  stroke: #ffffff;
-}
-
-.radio-icon > span > svg {
-  outline: none;
 }
 
 .ev-checkmark-list > ul,
@@ -2637,6 +2566,11 @@ input[type="search"]::-webkit-search-cancel-button {
 .button-tertiary:focus {
   --tw-bg-opacity: 1;
   background-color: rgb(216 232 234 / var(--tw-bg-opacity));
+}
+
+.button-tertiary:focus-visible {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .button-tertiary:disabled {
@@ -3364,66 +3298,145 @@ a.eve-stage-item:focus-visible .eve-stage-item-label-content {
 }
 
 .eve-tab-nav {
-  margin-bottom: 20px;
   display: inline-block;
   overflow: hidden;
   border-radius: 9px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(225 238 239 / var(--tw-bg-opacity));
+  padding: 8px;
+}
+
+@media (min-width: 576px) {
+
+  .eve-tab-nav {
+    --tw-bg-opacity: 1;
+    background-color: rgb(225 238 239 / var(--tw-bg-opacity));
     padding: 2px;
+  }
+}
+
+.eve-tab-nav {
+  font-size: 0;
+}
+
+@media (max-width: 575px) {
+  .eve-tab-nav > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(20px * var(--tw-space-x-reverse));
+    margin-left: calc(20px * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+
+.eve-tab-nav > * {
+  font-size: 14px;
 }
 
 .eve-tab-nav-item {
   position: relative;
+  height: 32px;
   text-wrap: nowrap;
   border-radius: 8px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 0px;
+  padding-right: 0px;
   font-size: 14px;
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(10 113 124 / var(--tw-text-opacity));
-    height:40px;
+}
+
+@media (min-width: 576px) {
+
+  .eve-tab-nav-item {
+    height: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 .eve-tab-nav-item.eve-active span {
   position: absolute;
   z-index: 10;
   display: block;
+  height: 32px;
   border-radius: 8px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  --tw-shadow:  0px 4px 12px 0px rgba(0, 0, 0, 0.08);
-  --tw-shadow-colored: 0px 4px 12px 0px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-    margin-left: -25px;
-    margin-top: -10px;
+  line-height: 39px;
+}
+
+@media (min-width: 576px) {
+
+  .eve-tab-nav-item.eve-active span {
     height: 40px;
-    line-height: 40px;
-    padding: 0 25px 0 25px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 41px;
+    --tw-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+    --tw-shadow-colored: 0px 4px 12px 0px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+}
+
+.eve-tab-nav-item.eve-active span {
+  top: 0;
+  left: -1px;
+  right: -1px;
+}
+
+@media (max-width: 575px) {
+  .eve-tab-nav-item.eve-active span {
+    border-bottom: 1.5px solid #0a717c;
+    border-radius: 0;
+    left: 0;
+    right: 0;
+    top: -1px;
+  }
+  .eve-tab-nav .eve-tab-nav-item:nth-child(2) {
+    margin-left: 0;
+  }
 }
 
 .eve-tab-nav-item:not(.eve-active) span {
-    display: none;
+  display: none;
 }
 
 .eve-tab-nav-divide {
-    width: 1px;
-    height: 20px;
+  display: none;
+}
+
+@media (min-width: 576px) {
+
+  .eve-tab-nav-divide {
     display: inline-block;
+    height: 20px;
+    width: 1px;
     flex: none;
     --tw-bg-opacity: 1;
     background-color: rgb(157 198 203 / var(--tw-bg-opacity));
+  }
 }
 
-.eve-tab-nav-divide:first-child ,
+.eve-tab-nav-divide:first-child,
 .eve-tab-nav-divide:last-child {
-  --tw-bg-opacity: 1;
-  background-color: rgb(225 238 239 / var(--tw-bg-opacity));
+  display: none;
+}
+
+@media (min-width: 576px) {
+
+  .eve-tab-nav-divide:first-child,
+.eve-tab-nav-divide:last-child {
+    --tw-bg-opacity: 1;
+    background-color: rgb(225 238 239 / var(--tw-bg-opacity));
+  }
 }
 
 .eve-tab-nav-item:last-child {
   padding-right: 24px;
+}
+
+.eve-tab-nav-item:not(.eve-active) {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .eve-tab-nav-item:not(.eve-active):hover {
@@ -3438,19 +3451,25 @@ a.eve-stage-item:focus-visible .eve-stage-item-label-content {
 
 .eve-tab-nav-item.eve-active {
   border-radius: 8px;
-  padding-left: 24px;
-  padding-right: 24px;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  padding-right: 0px;
   text-align: center;
   font-size: 14px;
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(10 113 124 / var(--tw-text-opacity));
+  outline: 2px solid transparent;
+  outline-width: 0px;
+  outline-offset: 0px;
 }
 
-.eve-tab-nav-item.eve-active:focus-visible {
-  outline-width: 0px;
+@media (min-width: 576px) {
+
+  .eve-tab-nav-item.eve-active {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 .eve-tab-nav-item:first-child.eve-active {
@@ -3702,7 +3721,7 @@ textarea:disabled {
 .k-invalid-msg div {
   font-size: 13px;
   font-weight: 500;
-  line-height: 17px;
+  line-height: 19px;
   --tw-text-opacity: 1;
   color: rgb(102 102 102 / var(--tw-text-opacity));
 }
@@ -3970,7 +3989,7 @@ a.card-member:focus {
   text-align: center;
   font-size: 13px;
   font-weight: 500;
-  line-height: 17px;
+  line-height: 19px;
   --tw-text-opacity: 1;
   color: rgb(102 102 102 / var(--tw-text-opacity));
 }
@@ -4223,13 +4242,277 @@ a.card-member:focus {
   box-shadow: 0 0 0 3px #fff, 0 0 0 4px var(--ring-color);
 }
 
-.radio-color:focus-visible, .radio-color.focus-visible {
+.radio-color-input:focus-visible + .radio-color {
   outline: 2px solid #44b7bd !important;
-  outline-offset: 3px !important;
+  outline-offset: 3px;
   transition: background-color 0.3s ease;
 }
 
 .visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.arrow-bottom-left,
+.arrow-bottom-center,
+.arrow-bottom-right {
+  bottom: 100%;
+  border-width: 0 8px 6px 8px;
+  border-color: transparent transparent #fff transparent;
+}
+
+.arrow-top-left,
+.arrow-top-center,
+.arrow-top-right {
+  top: 100%;
+  border-width: 6px 8px 0 8px;
+  border-color: #fff transparent transparent transparent;
+}
+
+.arrow-left-top,
+.arrow-left-center,
+.arrow-left-bottom {
+  left: 100%;
+  border-width: 6px 0 6px 8px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.arrow-right-top,
+.arrow-right-center,
+.arrow-right-bottom {
+  right: 100%;
+  border-width: 6px 8px 6px 0;
+  border-color: transparent #fff transparent transparent;
+}
+
+.arrow-bottom-left,
+.arrow-top-left {
+  left: 20px;
+}
+
+.arrow-bottom-center,
+.arrow-top-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arrow-bottom-right,
+.arrow-top-right {
+  right: 20px;
+}
+
+.arrow-left-top,
+.arrow-right-top {
+  top: 20px;
+}
+
+.arrow-left-center,
+.arrow-right-center {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrow-left-bottom,
+.arrow-right-bottom {
+  bottom: 20px;
+}
+
+.radio-chip {
+  margin: 4px;
+  display: inline-flex;
+  height: 1.75rem;
+  flex: none;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 20px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 0px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(214 214 214 / var(--tw-ring-opacity));
+  --tw-ring-offset-width: 3px;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.radio-chip:hover {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(10 113 124 / var(--tw-ring-opacity));
+}
+
+.radio-chip:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 0px;
+}
+
+.radio-chip.active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 113 124 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(10 113 124 / var(--tw-ring-opacity));
+}
+
+.radio-chip:not(.active):focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1 !important;
+  --tw-ring-color: rgb(68 183 189 / var(--tw-ring-opacity)) !important;
+}
+
+.radio-color-chip:hover {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(10 113 124 / var(--tw-ring-opacity));
+  --tw-ring-offset-width: 3px;
+}
+
+.radio-color-chip:focus {
+  outline-width: 2px;
+  outline-offset: 3px;
+  outline-color: #44B7BD;
+}
+
+.radio-color-chip:focus-within {
+  transition: background-color 0.3s ease;
+}
+
+.radio-color-input:focus-visible + .radio-color-chip {
+  outline: 2px solid #44b7bd !important;
+  outline-offset: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+}
+
+.radio-icon {
+  margin: 4px;
+  display: inline-flex;
+  height: 1.75rem;
+  width: 1.75rem;
+  flex: none;
+  flex-shrink: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  --tw-text-opacity: 1;
+  color: rgb(26 26 26 / var(--tw-text-opacity));
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(214 214 214 / var(--tw-ring-opacity));
+  --tw-ring-offset-width: 3px;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.radio-icon:hover {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(10 113 124 / var(--tw-ring-opacity));
+}
+
+.radio-icon {
+  outline: 2px solid transparent;
+  outline-offset: 0px;
+}
+
+.radio-icon.active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 113 124 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(10 113 124 / var(--tw-ring-opacity));
+}
+
+.radio-icon.active > span > svg {
+  stroke: #ffffff;
+}
+
+.radio-icon:not(.active):focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1 !important;
+  --tw-ring-color: rgb(68 183 189 / var(--tw-ring-opacity)) !important;
+}
+
+.radio-icon:focus-visible {
+  outline-width: 2px;
+  outline-offset: 3px;
+  outline-color: #44B7BD;
+}
+
+.radio-icon > span > svg {
+  outline: none;
+}
+
+.radio-icon-input:focus-visible + .radio-icon-label {
+  outline: 2px solid #44b7bd !important;
+  outline-offset: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.icon-visually-hidden {
   position: absolute !important;
   width: 1px !important;
   height: 1px !important;
